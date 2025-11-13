@@ -322,7 +322,7 @@ body {
 /*Gestao inteligente*/
 .gestao-inteligente {
     background-color: #fff;
-    padding: 120px 0;
+    padding: 70px 0 0 0;
     margin-top: -90px;
     position: relative;
     z-index: 2;
@@ -542,6 +542,60 @@ body {
     margin-top: -100px;
 }
 
+/*Ecossistema housi*/
+.housi-ecos-section {
+    padding: 0 0 60px;
+}
+
+/* Card rosa grande da esquerda */
+.housi-ecos-card {
+    background: #e63c8c;
+    border-radius: 60px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #ffffff;
+}
+
+/* texto vertical */
+.housi-ecos-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    /* texto de baixo pra cima */
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    max-height: 420px;
+}
+
+.housi-ecos-vertical .bold {
+    font-weight: 700;
+}
+
+/* imagem com todas as marcas (única imagem) */
+.housi-ecos-logos {
+    flex: 1;
+}
+
+.housi-ecos-logos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+}
+
+/* Lado direito – título e celular */
+.housi-ecos-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.housi-ecos-phone-wrapper {
+    margin-left: -120px;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -575,7 +629,6 @@ body {
     .residencial-full-section::before,
     .residencial-full-section::after {
         display: none;
-        /* remove shapes no mobile */
     }
 
     .residencial-left-content {
@@ -632,6 +685,38 @@ body {
     .housi-appspace-card {
         margin-left: 0;
         margin-top: 20px;
+    }
+
+    .housi-ecos-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 24px;
+        border-radius: 40px;
+    }
+
+    .housi-ecos-vertical {
+        writing-mode: horizontal-tb;
+        transform: none;
+        max-height: none;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .housi-ecos-right {
+        margin-top: 30px;
+    }
+
+    .housi-ecos-housi {
+        font-size: 26px;
+        letter-spacing: 5px;
+    }
+
+    .housi-ecos-appspace {
+        font-size: 20px;
+    }
+
+    .housi-ecos-phone-wrapper {
+        max-width: 220px;
     }
 }
 
