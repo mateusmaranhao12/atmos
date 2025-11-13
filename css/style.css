@@ -159,6 +159,175 @@ body {
     transform: translateY(-1px);
 }
 
+/*Section Residencial*/
+.residencial-full-section {
+    background: #0b395c;
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* Shapes de fundo arredondados */
+.residencial-full-section::before,
+.residencial-full-section::after {
+    content: "";
+    position: absolute;
+    background: #0d4169;
+    border-radius: 70px;
+    z-index: 0;
+}
+
+.residencial-full-section::before {
+    width: 58%;
+    height: 70%;
+    top: -70px;
+    left: -60px;
+}
+
+.residencial-full-section::after {
+    width: 60%;
+    height: 65%;
+    bottom: -90px;
+    right: -60px;
+}
+
+.residencial-left-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 480px;
+}
+
+.residencial-label {
+    font-size: 12px;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.residencial-title {
+    font-size: 32px;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 1.4;
+    color: #e5bf9a;
+}
+
+.residencial-title span {
+    font-weight: 700;
+    color: #e5bf9a;
+}
+
+.residencial-text {
+    font-size: 14px;
+    margin-top: 25px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.residencial-bear-wrapper {
+    margin-top: 40px;
+}
+
+.residencial-bear {
+    max-width: 460px;
+}
+
+.residencial-card-image-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.residencial-final-img {
+    max-width: 460px;
+    width: 100%;
+    margin-left: auto;
+    display: block;
+}
+
+/*Marcas*/
+.marcas-section {
+    background: #0b395c;
+    position: relative;
+    overflow: visible;
+    padding: 100px 0 80px;
+    z-index: 1;
+}
+
+/* shapes de fundo de leve, pra dar o mesmo clima das outras sections */
+.marcas-section::before {
+    content: "";
+    position: absolute;
+    left: -120px;
+    top: 40px;
+    width: 65%;
+    height: 70%;
+    background: #0d4169;
+    border-radius: 80px;
+    z-index: 0;
+}
+
+/* LADO ESQUERDO */
+.marcas-left-box {
+    position: relative;
+    z-index: 1;
+    background: #0d4169;
+    border-radius: 80px;
+    padding: 60px 70px;
+    max-width: 560px;
+}
+
+.marcas-title {
+    color: #e5bf9a;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.marcas-title span {
+    color: #e5bf9a;
+    /* dourado do layout */
+    font-weight: 600;
+}
+
+.marcas-text {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* LADO DIREITO – CARD BRANCO COM LOGOS (IMAGEM ÚNICA) */
+
+.marcas-card-wrapper {
+    position: relative;
+    z-index: 3;
+    background: #ffffff;
+    border-radius: 80px 80px 0px 0px;
+    padding: 60px 80px;
+    margin-right: -60px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.marcas-card-img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/*Gestao inteligente*/
+.gestao-inteligente {
+    background-color: #fff;
+    padding: 120px 0;
+    margin-top: -90px;
+    position: relative;
+    z-index: 2;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -182,5 +351,64 @@ body {
     .hero-form-card {
         margin-top: 30px;
         max-width: 100%;
+    }
+
+    .residencial-full-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .residencial-full-section::before,
+    .residencial-full-section::after {
+        display: none;
+        /* remove shapes no mobile */
+    }
+
+    .residencial-left-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .residencial-bear {
+        display: none;
+    }
+
+    .residencial-card-image-wrapper {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .residencial-final-img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .marcas-section {
+        padding: 70px 0 80px;
+    }
+
+    .marcas-section::before {
+        display: none;
+    }
+
+    .marcas-left-box {
+        padding: 40px 30px;
+        border-radius: 40px;
+        max-width: 100%;
+    }
+
+    .marcas-title {
+        font-size: 24px;
+    }
+
+    .marcas-card-wrapper {
+        margin: 40px auto 0;
+        padding: 40px 30px;
+        border-radius: 40px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .marcas-card-img {
+        max-width: 260px;
     }
 }
