@@ -1,3 +1,7 @@
+body {
+    font-family: 'Flexo';
+}
+
 /*Navbar*/
 .atmos-nav {
     background: #004264;
@@ -6,7 +10,7 @@
 }
 
 .logo_navbar {
-    height:50px;
+    height: 50px;
     transition: .2s ease;
     cursor: pointer;
 }
@@ -16,6 +20,7 @@
 }
 
 .atmos-link {
+    font-family: 'Flexo Light';
     color: rgba(255, 255, 255, 0.85) !important;
     font-size: 14px;
     letter-spacing: 2px;
@@ -35,4 +40,147 @@
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,0.85%29' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("../imgs/ATMOS_PUC_ÁREA\ EXTERNA_10.png");
+    /* troque pela sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* leve overlay para o conteúdo "grudar" no fundo */
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    padding: 60px 0;
+}
+
+/* Caixa de texto azul à esquerda */
+.hero-text-box {
+    background-color: rgba(8, 58, 95, 0.90);
+    font-family: 'Flexo Regular';
+    padding: 40px 60px;
+    max-width: 620px;
+}
+
+.hero-text-box p {
+    margin: 0;
+    color: #f5f5f5;
+    font-size: 40px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.hero-text-box span {
+    font-weight: 700;
+}
+
+/* Faixa "Nova Iguaçu - RJ" */
+.hero-location-pill {
+    font-family: 'Flexo DemiBold';
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: #f2b47c;
+    color: #0d3b60;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Card do formulário à direita */
+.hero-form-card {
+    background-color: rgba(8, 58, 95, 0.95);
+    padding: 40px 45px 45px;
+    max-width: 360px;
+    margin-left: auto;
+    color: #ffffff;
+}
+
+.hero-form-card h2 {
+    font-family: 'Flexo SemiBold';
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.hero-form-subtitle {
+    font-family: 'Flexo Light';
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Inputs escuros dentro do card */
+.hero-input {
+    background-color: rgba(0, 23, 45, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.hero-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* remove glow padrão no foco */
+.hero-input:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: #f2b47c;
+}
+
+/* Botão degradê dourado */
+.hero-btn {
+    font-family: 'Flexo SemiBold';
+    border: none;
+    border-radius: 0;
+    padding: 12px 0;
+    text-transform: lowercase;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background: #B06D51;
+    background: linear-gradient(90deg, rgba(176, 109, 81, 1) 0%, rgba(202, 152, 107, 1) 30%, rgba(241, 203, 165, 1) 71%, rgba(176, 109, 81, 1) 100%);
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hero-btn:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+/* Responsividade básica */
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-text-box {
+        padding: 30px 25px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text-box p {
+        font-size: 26px;
+    }
+
+    .hero-location-pill {
+        font-size: 16px;
+        padding: 8px 24px;
+    }
+
+    .hero-form-card {
+        margin-top: 30px;
+        max-width: 100%;
+    }
 }
