@@ -328,6 +328,220 @@ body {
     z-index: 2;
 }
 
+.gestao-title,
+.gestao-text,
+.gestao-text-bold {
+    text-align: center;
+    padding: 10px;
+}
+
+.gestao-title {
+    color: #004264;
+}
+
+.gestao-text {
+    color: #575756;
+}
+
+.gestao-text-bold {
+    color: #575756;
+    font-weight: bold;
+}
+
+.smart-logo-column {
+    display: flex;
+    justify-content: center;
+}
+
+.smart-logo {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+}
+
+.smart-divider {
+    width: 4px;
+    height: 80px;
+    background-color: #e63c8c;
+    margin: auto;
+}
+
+.smart-text {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #4a4a4a;
+}
+
+.housi-appspace-section {
+    padding: 60px 0 80px;
+}
+
+/* mapa à esquerda */
+.housi-map-wrapper {
+    text-align: center;
+}
+
+.housi-map {
+    max-width: 100%;
+    height: auto;
+}
+
+.implantacao-housi h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e63895;
+    /* Rosa HOUSI */
+    margin-bottom: 12px;
+}
+
+.implantacao-housi ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.implantacao-housi ul li {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 18px;
+}
+
+/* bolinha rosa */
+.implantacao-housi ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #e63895;
+    font-size: 20px;
+    line-height: 16px;
+}
+
+
+/* CARD ROSA */
+.housi-appspace-card {
+    background: #e63c8c;
+    border-radius: 48px;
+    padding: 50px 60px;
+    color: #ffffff;
+}
+
+/* cabeçalho */
+.housi-appspace-logo {
+    font-size: 22px;
+    letter-spacing: 6px;
+    font-weight: 600;
+}
+
+.housi-appspace-logo img {
+    max-width: 220px;
+}
+
+.housi-appspace-header {
+    display: flex;
+    align-items: center;
+}
+
+.housi-appspace-sub {
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.housi-appspace-marcas {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+/* Divisor branco do meio */
+.housi-divider {
+    width: 2px;
+    height: 75px;
+    background: #ffffff;
+    opacity: 0.9;
+    margin: 0 25px;
+}
+
+/* "+80 MARCAS" */
+.housi-appspace-marcas {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.housi-appspace-marcas .plus {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Lista */
+.housi-appspace-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+}
+
+.housi-appspace-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.housi-appspace-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* CÍRCULOS */
+.housi-appspace-circles {
+    margin-top: 30px;
+}
+
+.housi-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+    background: #fff;
+}
+
+.housi-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.housi-appspace-circles p {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/*Grudar o mapa no card*/
+.housi-appspace-row {
+    --bs-gutter-x: 0;
+}
+
+.housi-map-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.housi-appspace-card {
+    position: relative;
+    z-index: 1;
+    margin-left: -70px;
+    margin-top: -100px;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -404,11 +618,63 @@ body {
     .marcas-card-wrapper {
         margin: 40px auto 0;
         padding: 40px 30px;
-        border-radius: 40px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
     .marcas-card-img {
         max-width: 260px;
+    }
+
+    .smart-text {
+        font-size: 100%;
+    }
+
+    .housi-appspace-card {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .smart-logo {
+        max-width: 200px;
+        margin: 0 auto 16px;
+    }
+
+    .smart-text {
+        text-align: center;
+    }
+
+    .smart-divider {
+        display: none;
+    }
+
+    .smart-logo-column {
+        margin-bottom: 20px;
+    }
+
+    .housi-appspace-card {
+        padding: 30px 25px;
+        border-radius: 32px;
+        text-align: center;
+    }
+
+    .housi-divider {
+        display: none;
+        /* some no mobile */
+    }
+
+    .housi-appspace-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .housi-appspace-marcas {
+        text-align: center;
+    }
+
+    .housi-circle {
+        width: 100px;
+        height: 100px;
     }
 }
