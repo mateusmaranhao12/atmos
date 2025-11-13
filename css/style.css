@@ -1,5 +1,5 @@
 body {
-    font-family: 'Flexo';
+    font-family: 'Flexo Regular';
 }
 
 /*Navbar*/
@@ -326,6 +326,7 @@ body {
     margin-top: -90px;
     position: relative;
     z-index: 2;
+    font-family: 'Circular Air Pro';
 }
 
 .gestao-title,
@@ -390,7 +391,7 @@ body {
     font-size: 22px;
     font-weight: 700;
     color: #e63895;
-    /* Rosa HOUSI */
+    font-family: 'Circular Air Pro';
     margin-bottom: 12px;
 }
 
@@ -426,6 +427,7 @@ body {
     border-radius: 48px;
     padding: 50px 60px;
     color: #ffffff;
+    font-family: 'Circular Air Pro';
 }
 
 /* cabeçalho */
@@ -596,6 +598,265 @@ body {
     margin-left: -120px;
 }
 
+/*Pay per use*/
+.payuse-section {
+    background: #ffffff;
+    margin-top: 0;
+}
+
+/* bloco azul com topo arredondado */
+.payuse-wrapper {
+    background: #004264;
+    border-radius: 80px 80px 0 0;
+    /* canto arredondado só no topo */
+    padding: 70px 0 0;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* título + linhas douradas */
+.payuse-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.payuse-title {
+    font-size: 18px;
+    letter-spacing: 1em;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+}
+
+.payuse-line {
+    display: inline-block;
+    width: 120px;
+    height: 2px;
+    background: #b06d51;
+}
+
+/* subtítulo */
+.payuse-subtitle {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* listas de serviços */
+.payuse-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.payuse-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.payuse-list img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.payuse-list p {
+    margin: 0;
+}
+
+.payuse-list strong {
+    font-weight: 600;
+}
+
+/* barra dourada inferior */
+.payuse-footer {
+    margin-top: 50px;
+    background: linear-gradient(90deg, #b06d51, #ca986b, #f1cba5, #b06d51);
+    padding: 18px 15px;
+    text-align: center;
+}
+
+.payuse-footer p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0b395c;
+}
+
+.payuse-lazer {
+    padding: 80px 0 60px;
+}
+
+/* TAG LAZER */
+.lazer-tag {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* TÍTULO */
+.lazer-title {
+    font-size: 42px;
+    line-height: 1.25;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+.lazer-title span {
+    color: #e4be95;
+    font-weight: 600;
+}
+
+/* DESCRIÇÃO */
+.lazer-desc {
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 70px;
+}
+
+/* BOX COM ITENS */
+.lazer-box {
+    background: #0A3856;
+    background: linear-gradient(90deg, rgba(10, 56, 86, 1) 0%, rgba(5, 73, 107, 1) 100%);
+    padding: 40px 50px;
+    border-radius: 40px;
+    backdrop-filter: blur(3px);
+}
+
+/* LISTAS */
+.lazer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.lazer-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: #dbe8f0;
+}
+
+.lazer-list img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/*Carrossel lazer*/
+.lazer-carousel-section {
+    background: #fff;
+    padding: 0 0 80px;
+}
+
+/* ÁREA PRINCIPAL DO CARROSSEL */
+.lazer-carousel-wrapper {
+    position: relative;
+    background: #063e5d;
+    /* azul do print acima */
+    padding: 60px 0 0;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGEM PRINCIPAL */
+.carousel-main {
+    width: 70%;
+    border-radius: 40px 40px 0 0;
+    overflow: hidden;
+}
+
+.carousel-main img {
+    width: 100%;
+    display: block;
+    border-radius: 40px;
+    transition: opacity 0.4s ease;
+}
+
+/* SETAS DO CARROSSEL */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn img {
+    width: 50px;
+    height: 50px;
+    transition: 0.2s ease;
+}
+
+.carousel-btn img:hover {
+    transform: scale(1.1);
+}
+
+.left-btn {
+    left: 80px;
+}
+
+.right-btn {
+    right: 80px;
+}
+
+/* FUNDO BEGE DAS MINIATURAS */
+.carousel-thumbs {
+    background: linear-gradient(90deg, #b06d51, #ca986b, #f1cba5, #b06d51);
+    padding: 25px 40px;
+    border-radius: 0 0 40px 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: -20px;
+    border-radius: 40px;
+}
+
+/* MINIATURAS */
+.carousel-thumbs img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 18px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.25s;
+}
+
+.carousel-thumbs img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.carousel-thumbs img.active {
+    opacity: 1;
+    border: 3px solid #fff;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -718,6 +979,73 @@ body {
     .housi-ecos-phone-wrapper {
         max-width: 220px;
     }
+
+    .payuse-wrapper {
+        padding-top: 50px;
+        border-radius: 40px 40px 0 0;
+    }
+
+    .payuse-title-row {
+        gap: 15px;
+    }
+
+    .payuse-line {
+        width: 70px;
+    }
+
+    .payuse-title {
+        font-size: 14px;
+        letter-spacing: 0.25em;
+    }
+
+    .payuse-footer p {
+        font-size: 16px;
+    }
+
+    .lazer-carousel-wrapper {
+        padding: 30px 0 0;
+    }
+
+    /* imagem principal ocupa mais largura */
+    .carousel-main {
+        width: 90%;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .carousel-main img {
+        border-radius: 24px;
+    }
+
+    /* setas menores e mais próximas */
+    .carousel-btn img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .left-btn {
+        left: 16px;
+    }
+
+    .right-btn {
+        right: 16px;
+    }
+
+    /* faixa de thumbs ocupa toda largura e vira “carrossel horizontal” */
+    .carousel-thumbs {
+        width: 100%;
+        padding: 14px 14px 18px;
+        gap: 12px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-thumbs img {
+        width: 96px;
+        height: 64px;
+        flex: 0 0 auto;
+        /* não encolher */
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -761,5 +1089,28 @@ body {
     .housi-circle {
         width: 100px;
         height: 100px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .lazer-carousel-wrapper {
+        padding-top: 20px;
+    }
+
+    .carousel-main {
+        width: 100%;
+    }
+
+    .carousel-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .left-btn {
+        left: 8px;
+    }
+
+    .right-btn {
+        right: 8px;
     }
 }
