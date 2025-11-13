@@ -1,0 +1,38 @@
+/*Navbar*/
+.atmos-nav {
+    background: #004264;
+    /* azul escuro */
+    padding: 15px 0;
+}
+
+.logo_navbar {
+    height:50px;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.logo_navbar:hover {
+    transform: scale(1.1);
+}
+
+.atmos-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+/* Hover dourado elegante */
+.atmos-link:hover {
+    color: #B99464 !important;
+}
+
+/* Toggler branco */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,0.85%29' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
