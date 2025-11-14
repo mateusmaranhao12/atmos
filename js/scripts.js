@@ -16,6 +16,10 @@ function getInstagram() {
     window.open('https://www.instagram.com/atmosmarioguimaraes/')
 }
 
+function getYoutube() {
+    window.open('https://www.youtube.com/@affinityagencia')
+}
+
 //Carrossel
 const mainImg = document.getElementById('carousel-main-img')
 const thumbs = document.querySelectorAll('.carousel-thumbs .thumb')
