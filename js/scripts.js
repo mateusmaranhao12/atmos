@@ -9,7 +9,7 @@ function getFacebook() {
 }
 
 function getWhatsApp() {
-    window.open('wa.link/yuhkfs')
+    window.open('http://wa.link/yuhkfs')
 }
 
 function getInstagram() {
