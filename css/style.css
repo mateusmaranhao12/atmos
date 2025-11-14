@@ -1468,6 +1468,8 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 25px;
+    color: #004264;
+    cursor: pointer;
 }
 
 .atmos-footer-social a {

@@ -5,7 +5,7 @@ function getAgencia() {
 
 //links
 function getFacebook() {
-    window.open('')
+    window.open('https://www.facebook.com/profile.php?id=61582192472678#')
 }
 
 function getWhatsApp() {
