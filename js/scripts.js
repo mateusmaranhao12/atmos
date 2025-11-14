@@ -3,6 +3,19 @@ function getAgencia() {
     window.open('https://www.agenciaaffinity.com.br/')
 }
 
+//links
+function getFacebook() {
+    window.open('')
+}
+
+function getWhatsApp() {
+    window.open('wa.link/yuhkfs')
+}
+
+function getInstagram() {
+    window.open('https://www.instagram.com/atmosmarioguimaraes/')
+}
+
 //Carrossel
 const mainImg = document.getElementById('carousel-main-img')
 const thumbs = document.querySelectorAll('.carousel-thumbs .thumb')

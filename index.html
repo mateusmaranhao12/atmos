@@ -44,27 +44,27 @@
                 <ul class="navbar-nav gap-4">
 
                     <li class="nav-item">
-                        <a class="nav-link atmos-link" href="#">O residencial</a>
+                        <a class="nav-link atmos-link" href="#residencial">O residencial</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link atmos-link" href="#">Lazer</a>
+                        <a class="nav-link atmos-link" href="#lazer">Lazer</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link atmos-link" href="#">Plantas</a>
+                        <a class="nav-link atmos-link" href="#plantas">Plantas</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link atmos-link" href="#">Implantação</a>
+                        <a class="nav-link atmos-link" href="#implantacao">Implantação</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link atmos-link" href="#">Localização</a>
+                        <a class="nav-link atmos-link" href="#localizacao">Localização</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link atmos-link" href="#">Contato</a>
+                        <a class="nav-link atmos-link" href="#contato">Contato</a>
                     </li>
 
                 </ul>
@@ -129,7 +129,7 @@
     </section>
 
     <!--Residencial section-->
-    <section class="residencial-full-section py-5">
+    <section id="residencial" class="residencial-full-section py-5">
         <div class="container position-relative">
             <div class="row align-items-center">
 
@@ -470,7 +470,7 @@
             </div>
 
             <!-- LAZER -->
-            <div class="payuse-lazer">
+            <div id="lazer" class="payuse-lazer">
                 <div class="container">
 
                     <!-- TAG LAZER -->
@@ -621,7 +621,7 @@
     </section>
 
     <!--Plantas-->
-    <section class="plantas-section">
+    <section id="plantas" class="plantas-section">
         <div class="container">
             <div class="row align-items-center">
 
@@ -698,7 +698,7 @@
     </section>
 
     <!--Implantacao-->
-    <section class="implantacao-section">
+    <section id="implantacao" class="implantacao-section">
         <div class="container">
             <div class="row align-items-center">
 
@@ -899,12 +899,102 @@
     </section>
 
     <!--Mapa-->
-    <section class="mapa-section">
+    <section id="localizacao" class="mapa-section">
         <iframe class="mapa-iframe"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.851089286748!2d-43.464366924617586!3d-22.7571020325388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99670b9ec9f3cb%3A0xee7eec7d6234747d!2sAv.%20Dr.%20Mario%20Guimar%C3%A3es%2C%201076%20-%20Alvarez%2C%20Nova%20Igua%C3%A7u%20-%20RJ%2C%2026255-230!5e1!3m2!1spt-BR!2sbr!4v1763141380377!5m2!1spt-BR!2sbr"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     </section>
+
+    <!--Footer-->
+    <footer id="contato" class="atmos-footer">
+        <div class="container">
+            <div class="row align-items-start">
+
+                <!-- COLUNA ESQUERDA -->
+                <div class="col-lg-7 mb-5 mb-lg-0 atmos-footer-left">
+
+                    <!-- logos -->
+                    <div class="atmos-footer-logos">
+                        <!-- logo principal Atmos -->
+                        <img src="./imgs/housi_appspace.png" onclick="getAgencia()" alt="Atmos" class="atmos-logo-main">
+                        <!-- imagem única com os 3 logos brancos -->
+                        <img src="./imgs/footer1.png" alt="Parceiros" class="atmos-logo-partners">
+                    </div>
+
+                    <!-- redes sociais -->
+                    <div class="atmos-footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+
+                    <!-- telefone / whatsapp / instagram -->
+                    <div class="atmos-footer-contact">
+                        <div class="atmos-footer-phone">
+                            <!-- aqui você pode usar uma imagem de ícone se quiser -->
+                            <img src="./imgs/footer2.png" alt="WhatsApp">
+                            <span>21 97220-4752</span>
+                        </div>
+
+                        <div class="atmos-footer-handle">
+                            <img src="./imgs/footer3.png" alt="@">
+                            <span>@atmosmarioguimaraes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA – FORMULÁRIO -->
+                <div class="col-lg-5 atmos-footer-right">
+                    <h3 class="atmos-footer-form-title">CADASTRE-SE AQUI:</h3>
+                    <p class="atmos-footer-form-sub">
+                        Receba agora mais informações <br>
+                        com exclusividade!
+                    </p>
+
+                    <form class="atmos-footer-form" action="#" method="post">
+                        <input type="text" name="nome" placeholder="Seu nome">
+                        <input type="email" name="email" placeholder="E-mail">
+                        <input type="tel" name="telefone" placeholder="Telefone">
+                        <textarea name="mensagem" rows="4" placeholder="Mensagem"></textarea>
+
+                        <div class="text-end mt-3">
+                            <button type="submit" class="atmos-footer-btn">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- faixa de texto legal -->
+        <div class="atmos-footer-disclaimer">
+            O empreendimento imobiliário encontra-se registrado sob o R.I. AC013801180 na matrícula nº 64.561,
+            nos termos do alvará de aprovação nº 164403/2025 de 30 de outubro de 2025, junto ao 2º REGISTRO DE
+            IMÓVEIS DA 1ª CIRCUNSCRIÇÃO DE NOVA IGUAÇU/ RJ. As imagens e perspectivas do empreendimento são
+            meramente ilustrativas e possuem sugestão de decoração e/ou de paisagismo, podendo ser alteradas sem
+            prévio aviso. As áreas comuns e unidades serão entregues conforme memorial descritivo. Incorporadora
+            responsável: OMEGA INC INCORPORADORA S.A. inscrita no CNPJ 41.382.866/0001-91
+        </div>
+    </footer>
+    <footer class="footer-2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h5 class="footer-2-text">Desenvolvido por <span>Affinity</span></h5>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

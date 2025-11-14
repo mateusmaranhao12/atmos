@@ -137,6 +137,14 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* estado focado */
+.hero-input:focus {
+    background-color: rgba(0, 23, 45, 0.85) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: none !important;
+}
+
 /* remove glow padrão no foco */
 .hero-input:focus {
     box-shadow: none;
@@ -1142,6 +1150,7 @@ body {
 /* posição das setas */
 .arrow-left {
     left: -40px;
+    z-index: 2;
 }
 
 .arrow-right {
@@ -1416,6 +1425,182 @@ body {
     display: block;
 }
 
+/*Footer*/
+.atmos-footer {
+    background-color: #004264;
+    color: #ffffff;
+    padding: 60px 0 40px;
+    font-family: inherit;
+}
+
+/* Coluna esquerda */
+.atmos-footer-left {
+    text-align: left;
+}
+
+/* logos */
+.atmos-footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.atmos-logo-main {
+    max-height: 70px;
+    height: auto;
+    transition: .2s ease;
+}
+
+.atmos-logo-main:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.atmos-logo-partners {
+    max-height: 60px;
+    height: auto;
+}
+
+/* Ícones sociais (quadrados) */
+.atmos-footer-social {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.atmos-footer-social a {
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: #e5bf9a;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #004264;
+    transition: background 0.2s ease, color 0.2s ease;
+    font-size: 16px;
+}
+
+.atmos-footer-social a:hover {
+    background-color: #d08a4a;
+    color: #004264;
+}
+
+/* telefone + instagram */
+.atmos-footer-contact {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.atmos-footer-phone,
+.atmos-footer-handle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.atmos-footer-phone img {
+    width: 32px;
+    height: 32px;
+}
+
+
+/* Coluna direita – formulário */
+.atmos-footer-right {
+    text-align: left;
+}
+
+.atmos-footer-form-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+}
+
+.atmos-footer-form-sub {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.atmos-footer-form {
+    width: 100%;
+}
+
+.atmos-footer-form input,
+.atmos-footer-form textarea {
+    width: 100%;
+    background-color: #003653;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    font-size: 13px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+
+.atmos-footer-form input::placeholder,
+.atmos-footer-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.atmos-footer-form input:focus,
+.atmos-footer-form textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: rgba(255, 255, 255, .6) !important;
+    background-color: #003653 !important;
+}
+
+/* Botão enviar (cobre / dourado) */
+.atmos-footer-btn {
+    padding: 6px 40px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #d59557 0%, #f2c18b 50%, #d59557 100%);
+    color: #004264;
+    cursor: pointer;
+    transition: .2s ease;
+    margin-bottom: 10px;
+}
+
+.atmos-footer-btn:hover {
+    filter: brightness(1.05);
+    transform: scale(1.1);
+}
+
+/* Disclaimer */
+.atmos-footer-disclaimer {
+    background-color: #004264;
+    color: #ffffff;
+    font-size: 10px;
+    line-height: 1.4;
+    padding: 10px 40px 5px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-2 {
+    background-color: #062837;
+    padding: 20px;
+}
+
+.footer-2-text {
+    color: #afc7e0;
+    text-align: end;
+}
+
+.footer-2-text span {
+    font-weight: bold;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -1653,6 +1838,42 @@ body {
         flex-direction: column;
         gap: 16px;
     }
+
+    .mapa-section {
+        height: 70vh;
+    }
+
+    .atmos-footer {
+        padding: 40px 0 30px;
+    }
+
+    .atmos-footer-logos {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .atmos-footer-left,
+    .atmos-footer-right {
+        text-align: center;
+    }
+
+    .atmos-footer-social {
+        justify-content: center;
+    }
+
+    .atmos-footer-contact {
+        text-align: center;
+    }
+
+    .atmos-footer-phone,
+    .atmos-footer-handle {
+        justify-content: center;
+    }
+
+    .atmos-footer-disclaimer {
+        padding: 10px 20px 5px;
+        text-align: left;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -1767,5 +1988,19 @@ body {
 
     .implantacao-dots {
         margin-top: 6px;
+    }
+
+    .atmos-footer-form-sub {
+        font-size: 13px;
+    }
+
+    .atmos-footer-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .mapa-section {
+        height: 60vh;
     }
 }
