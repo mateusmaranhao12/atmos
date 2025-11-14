@@ -131,51 +131,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const plantasData = {
         cobertura: [
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 101.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_101.png',
                 legenda: 'PAVIMENTO COBERTURA 101 | 44,50 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 102.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_102.png',
                 legenda: 'PAVIMENTO COBERTURA 102 | 44,50 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 103.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_103.png',
                 legenda: 'PAVIMENTO COBERTURA 103 | 43,94 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 104.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_104.png',
                 legenda: 'PAVIMENTO COBERTURA 104 | 43,55 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 105.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_105.png',
                 legenda: 'PAVIMENTO COBERTURA 105 | 41,53 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 106.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_106.png',
                 legenda: 'PAVIMENTO COBERTURA 106 | 42,13 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 107.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_107.png',
                 legenda: 'PAVIMENTO COBERTURA 107 | 36,85 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 108.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_108.png',
                 legenda: 'PAVIMENTO COBERTURA 108 | 40,48 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 109.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_109.png',
                 legenda: 'PAVIMENTO COBERTURA 109 | 43,94 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 110.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_110.png',
                 legenda: 'PAVIMENTO COBERTURA 110 | 43,19 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 111.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_111.png',
                 legenda: 'PAVIMENTO COBERTURA 111 | 43,80 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV COBERTURA_AP 112.png',
+                src: './imgs/plantas/ATMOS_PAV_COBERTURA_AP_112.png',
                 legenda: 'PAVIMENTO COBERTURA 112 | 42,28 m²'
             }
         ],
@@ -183,79 +183,79 @@ document.addEventListener('DOMContentLoaded', () => {
         // tipo
         tipo: [
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 01.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_01.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 1 | 44,56 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 02,14.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_02,14.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 2 | 44,56 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 04.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_04.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 4 | 43,94 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 07.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_07.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 7 | 36,55 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 06,10.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_06,10.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 6, 8 e 10 | 20,77 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 05 OP1.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_05_OP1.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 5 OP1 | 64,23 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 05 OP2.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_05_OP2.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 5 OP2 | 64,23 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 05 OP3.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_05_OP3.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 5 OP3 | 64,23 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA12.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA12.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 12 | 19,71 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 14 P.N.E..png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_14_P.N.E..png',
                 legenda: 'APARTAMENTO TIPO COLUNA 14 (1º ao 10º pav) | 43,94 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA14_6AO18.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA14_6AO18.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 14 (11º ao 18º pav) | 43,94 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 03,09.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_03,09.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 3 E 9 | 20,85 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 11.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_11.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 11 | 21,80 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 13.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_13.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 13 | 21,24 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 15.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_15.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 15 | 21,04 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 16 OP1.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_16_OP1.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 16 OP1 | 21,24 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 16 OP2.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_16_OP2.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 16 OP2 | 21,24 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 16 OP3.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_16_OP3.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 16 OP3 | 21,24 m²'
             },
             {
-                src: './imgs/plantas/ATMOS_PAV TIPO_COLUNA 17.png',
+                src: './imgs/plantas/ATMOS_PAV_TIPO_COLUNA_17.png',
                 legenda: 'APARTAMENTO TIPO COLUNA 17 | 21,90 m²'
             },
 
