@@ -1,3 +1,10 @@
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Flexo Regular';
 }
@@ -941,13 +948,38 @@ body {
 
 /* imagem da planta */
 .plantas-img-wrapper {
-    border-radius: 4px;
+    position: relative;
     overflow: hidden;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.plantas-img-wrapper.dragging {
+    cursor: grabbing;
 }
 
 .plantas-img {
-    width: 70%;
     display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    transition: transform 0.25s ease;
+}
+
+/* Quando estiver em zoom */
+.plantas-img.zoomed {
+    transform: scale(2.3);
+}
+
+/* feedback visual no botão quando estiver em zoom */
+.plantas-ampliar-btn.zoom-active {
+    background-color: #0b395c;
+    color: #fff;
+}
+
+.plantas-ampliar-btn.zoom-active i {
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
 }
 
 /* rodapé do card */
@@ -986,10 +1018,12 @@ body {
 
 /* paginação */
 .plantas-pagination {
-    margin-top: 18px;
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: center;
+    max-width: 100%;
+    padding: 10px 0 20px;
 }
 
 .plantas-page {
@@ -1064,14 +1098,24 @@ body {
     justify-content: center;
 }
 
-/* box da imagem (pra facilitar borda, sombra se quiser) */
+/* box da imagem */
 .implantacao-img-box {
-    max-width: 520px;
+    overflow: hidden;
+    display: inline-block;
 }
 
 .implantacao-img {
-    display: block;
-    width: 100%;
+    transition: transform 0.25s ease;
+    transform-origin: center center;
+}
+
+/* estados de zoom/drag – mantém o que já estava */
+.implantacao-img.implantacao-zoomed {
+    cursor: grab;
+}
+
+.implantacao-img-wrapper.implantacao-dragging .implantacao-img.implantacao-zoomed {
+    cursor: grabbing;
 }
 
 /* setas */
@@ -1092,7 +1136,7 @@ body {
 }
 
 .implantacao-arrow img:hover {
-    transform: translateY(-50%) scale(1.08);
+    transform: scale(1.08);
 }
 
 /* posição das setas */
@@ -1175,6 +1219,34 @@ body {
     gap: 6px;
     cursor: pointer;
     white-space: nowrap;
+    transition: 0.25s ease;
+}
+
+/* estado quando está ampliado */
+.implantacao-ampliar-btn.is-zoomed {
+    background: #0b395c;
+    color: #fff;
+}
+
+/* wrapper da imagem – impede scroll e dá área de drag */
+.implantacao-img-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+/* animação do zoom */
+.implantacao-img {
+    transition: transform 0.25s ease;
+    transform-origin: center center;
+}
+
+/* cursor ao arrastar */
+.implantacao-img.implantacao-zoomed {
+    cursor: grab;
+}
+
+.implantacao-img-wrapper.implantacao-dragging .implantacao-img.implantacao-zoomed {
+    cursor: grabbing;
 }
 
 /* Responsividade básica */
@@ -1460,6 +1532,10 @@ body {
 
     .implantacao-footer-row .col-lg-6 {
         margin-left: 0px;
+    }
+
+    .implantacao-footer-left {
+        text-align: center;
     }
 }
 
