@@ -1116,6 +1116,10 @@ body {
     margin-top: 25px;
 }
 
+.implantacao-footer-row .col-lg-6 {
+    margin-left: 60px;
+}
+
 /* título "IMPLANTAÇÃO | Puc e apartamentos" */
 .implantacao-footer-left {
     font-size: 13px;
@@ -1452,6 +1456,10 @@ body {
 
     .implantacao-ampliar-btn {
         margin-left: 0;
+    }
+
+    .implantacao-footer-row .col-lg-6 {
+        margin-left: 0px;
     }
 }
 
