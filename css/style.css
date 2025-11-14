@@ -857,6 +857,322 @@ body {
     border: 3px solid #fff;
 }
 
+/*Plantas*/
+.plantas-section {
+    background: #ffffff;
+    padding: 20px 0 50px 0;
+}
+
+/* tag “PLANTAS” */
+.plantas-tag {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #7a96aa;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* título */
+.plantas-title {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #0b395c;
+    font-weight: 300;
+}
+
+.plantas-title span {
+    font-weight: 700;
+}
+
+/* textos */
+.plantas-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4c5c6a;
+    margin-bottom: 10px;
+}
+
+/* infos com ícone */
+.plantas-info-icon {
+    max-width: 46px;
+    margin-bottom: 8px;
+}
+
+.plantas-info-text {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+}
+
+/* CARD DA PLANTA */
+.plantas-card {
+    border-radius: 8px;
+    border: 1px solid #d9e3ec;
+    padding: 22px 26px 18px;
+    background: #ffffff;
+}
+
+/* tabs */
+.plantas-tabs {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.plantas-tab {
+    border: 1px solid #0b395c;
+    background: transparent;
+    padding: 6px 24px;
+    border-radius: 3px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0b395c;
+    cursor: pointer;
+}
+
+.plantas-tab.active {
+    background: #0b395c;
+    color: #ffffff;
+}
+
+/* imagem da planta */
+.plantas-img-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.plantas-img {
+    width: 70%;
+    display: block;
+}
+
+/* rodapé do card */
+.plantas-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #0b395c;
+}
+
+.plantas-legenda {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+/* botão ampliar */
+.plantas-ampliar-btn {
+    border-radius: 40px;
+    border: 1px solid #0b395c;
+    background: transparent;
+    font-size: 13px;
+    padding: 6px 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #0b395c;
+}
+
+.plantas-ampliar-btn img {
+    width: 14px;
+    height: 14px;
+}
+
+/* paginação */
+.plantas-pagination {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.plantas-page {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #0b395c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+    color: #0b395c;
+    transition: .2s ease;
+}
+
+.plantas-page.active {
+    background: #0b395c;
+    color: #ffffff;
+}
+
+.plantas-page:hover {
+    background: #0b395c;
+    color: #ffffff;
+}
+
+/*Implantacao*/
+.implantacao-section {
+    background: #ffffff;
+    padding: 90px 0 80px;
+}
+
+/* tag “IMPLANTAÇÃO” */
+.implantacao-tag {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: #7b96a8;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* título */
+.implantacao-title {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 300;
+    color: #0b395c;
+    margin-bottom: 18px;
+}
+
+.implantacao-title span {
+    font-weight: 700;
+}
+
+/* texto */
+.implantacao-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4c5c6a;
+    max-width: 380px;
+}
+
+.implantacao-textos {
+    padding-left: 70px;
+}
+
+/* wrapper da planta + setas */
+.implantacao-img-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* box da imagem (pra facilitar borda, sombra se quiser) */
+.implantacao-img-box {
+    max-width: 520px;
+}
+
+.implantacao-img {
+    display: block;
+    width: 100%;
+}
+
+/* setas */
+.implantacao-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.implantacao-arrow img {
+    width: 44px;
+    height: 44px;
+    transition: transform 0.2s ease;
+}
+
+.implantacao-arrow img:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* posição das setas */
+.arrow-left {
+    left: -40px;
+}
+
+.arrow-right {
+    right: -40px;
+}
+
+/* footer */
+.implantacao-footer-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.implantacao-footer-row {
+    margin-top: 25px;
+}
+
+/* título "IMPLANTAÇÃO | Puc e apartamentos" */
+.implantacao-footer-left {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #0b395c;
+    margin-bottom: 6px;
+}
+
+.implantacao-footer-sub {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 13px;
+    color: #4c5c6a;
+    margin-left: 4px;
+}
+
+/* linha bolinhas + botão */
+.implantacao-footer-bottom {
+    max-width: 360px;
+    /* pra não ir muito pro meio da tela */
+}
+
+/* bolinhas */
+.implantacao-dots {
+    display: inline-flex;
+    gap: 6px;
+}
+
+.implantacao-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #0b395c;
+    cursor: pointer;
+}
+
+.implantacao-dots .dot.active {
+    background: #0b395c;
+}
+
+/* botão "ampliar" */
+.implantacao-ampliar-btn {
+    border-radius: 40px;
+    border: 1px solid #0b395c;
+    background: transparent;
+    padding: 5px 20px;
+    font-size: 13px;
+    color: #0b395c;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -1046,6 +1362,43 @@ body {
         flex: 0 0 auto;
         /* não encolher */
     }
+
+    .plantas-section {
+        padding: 70px 0;
+    }
+
+    .plantas-title {
+        font-size: 30px;
+    }
+
+    .plantas-card {
+        margin-top: 30px;
+    }
+
+    .implantacao-section {
+        padding: 70px 0 60px;
+    }
+
+    .implantacao-img-box {
+        max-width: 100%;
+    }
+
+    .arrow-left {
+        left: 0;
+    }
+
+    .arrow-right {
+        right: 0;
+    }
+
+    .implantacao-footer-row {
+        margin-top: 25px;
+    }
+
+    .implantacao-textos {
+        padding-left: 0;
+        text-align: center;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -1090,6 +1443,16 @@ body {
         width: 100px;
         height: 100px;
     }
+
+    .implantacao-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .implantacao-ampliar-btn {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -1112,5 +1475,30 @@ body {
 
     .right-btn {
         right: 8px;
+    }
+
+    .plantas-info-text {
+        font-size: 13px;
+    }
+
+    .plantas-pagination {
+        flex-wrap: wrap;
+    }
+
+    .implantacao-title {
+        font-size: 26px;
+    }
+
+    .implantacao-footer-left {
+        font-size: 12px;
+    }
+
+    .implantacao-ampliar-btn {
+        font-size: 12px;
+        padding: 5px 18px;
+    }
+
+    .implantacao-dots {
+        margin-top: 6px;
     }
 }
