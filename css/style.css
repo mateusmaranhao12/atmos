@@ -1249,6 +1249,173 @@ body {
     cursor: grabbing;
 }
 
+/*Nova experiencia*/
+.nova-experiencia {
+    background-color: #e5bf9a;
+    border-radius: 50px 50px 0 0;
+    padding: 50px;
+}
+
+.nova-experiencia-title {
+    text-align: center;
+    color: #004264;
+}
+
+.nova-experiencia-title span {
+    font-weight: bold;
+}
+
+.nova-experiencia iframe {
+    position: relative;
+    z-index: 3;
+    transform: translateY(60px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+
+/*Um centro em constante evolução*/
+.centro-evolucao-section {
+    background: #ffffff;
+    padding-bottom: 0 !important;
+    margin-top: -60px;
+    padding-top: 110px;
+    position: relative;
+    z-index: 1;
+}
+
+.evolucao-header {
+    text-align: center;
+    color: #575756;
+}
+
+/* garante que não cria espaço entre card e faixa */
+.centro-evolucao-container {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.centro-evolucao-section .row {
+    margin-bottom: 0 !important;
+}
+
+/* TAG "IMPLANTAÇÃO" */
+.centro-evolucao-tag {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #575756;
+    margin-bottom: 10px;
+}
+
+/* TÍTULO */
+.centro-evolucao-title {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 300;
+    color: #0b395c;
+    margin-bottom: 20px;
+}
+
+.centro-evolucao-title span {
+    font-weight: 700;
+}
+
+/* TEXTO */
+.centro-evolucao-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4c5c6a;
+    max-width: 380px;
+}
+
+/* CARD AZUL DA DIREITA */
+.centro-evolucao-card {
+    background: #00456c;
+    /* azul bem próximo do layout */
+    border-radius: 48px;
+    padding: 35px 70px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
+/* DUAS COLUNAS INTERNAS */
+.centro-evolucao-cols {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+}
+
+.centro-evolucao-col {
+    flex: 1;
+}
+
+/* CADA LINHA: NOME ..... TEMPO */
+.centro-evolucao-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.centro-evolucao-item:last-child {
+    margin-bottom: 0;
+}
+
+.centro-evolucao-item .local-name {
+    white-space: nowrap;
+}
+
+.centro-evolucao-item .local-time {
+    white-space: nowrap;
+}
+
+/* “pontilhado” no meio */
+.centro-evolucao-item .local-dots {
+    flex: 1;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+    margin: 0 8px;
+}
+
+/* FAIXA DO ENDEREÇO (BEGE) */
+.centro-evolucao-address {
+    background: #e5b88b;
+    margin-top: -2px;
+    padding: 12px 0;
+    text-align: center;
+}
+
+/* texto da faixa */
+.centro-evolucao-address .container {
+    font-size: 18px;
+    color: #0b395c;
+    font-weight: bold;
+}
+
+/* gruda o card azul na faixa bege (sem gap) */
+.centro-evolucao-section .row:last-child {
+    margin-bottom: 0;
+}
+
+/*Mapa section*/
+.mapa-section {
+    width: 100%;
+    height: 80vh;
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* MAPA FULLSCREEN */
+.mapa-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
 /* Responsividade básica */
 @media (max-width: 991.98px) {
     .hero-section {
@@ -1475,6 +1642,17 @@ body {
         padding-left: 0;
         text-align: center;
     }
+
+    .centro-evolucao-card {
+        margin-top: 30px;
+        padding: 25px 30px;
+        border-radius: 32px;
+    }
+
+    .centro-evolucao-cols {
+        flex-direction: column;
+        gap: 16px;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -1536,6 +1714,11 @@ body {
 
     .implantacao-footer-left {
         text-align: center;
+    }
+
+    .nova-experiencia iframe {
+        transform: translateY(40px);
+        border-radius: 8px;
     }
 }
 
