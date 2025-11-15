@@ -867,9 +867,15 @@ body {
 
 .payuse-footer p {
     margin: 0;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     color: #0b395c;
+}
+
+@media (max-width: 767px) {
+    .payuse-footer {
+        font-size: 100%;
+    }
 }
 
 .payuse-lazer {
@@ -1868,12 +1874,14 @@ body {
     }
 
     .atmos-footer-social {
-        margin-top: 30px;  /* você pode testar 25–35 pra chegar no ponto perfeito */
+        margin-top: 30px;
+        /* você pode testar 25–35 pra chegar no ponto perfeito */
     }
 
     /* puxa o telefone/@ um pouquinho para a esquerda */
     .atmos-footer-contact {
-        margin-left: -15px; /* se ainda parecer longe, testa -20 */
+        margin-left: -15px;
+        /* se ainda parecer longe, testa -20 */
     }
 
     /* garante alinhamento vertical mais suave */
