@@ -17,7 +17,7 @@ function getInstagram() {
 }
 
 function getYoutube() {
-    window.open('https://www.youtube.com/@affinityagencia')
+    window.open('')
 }
 
 //Carrossel
