@@ -1463,11 +1463,10 @@ body {
 /* TAG "IMPLANTAÇÃO" */
 .centro-evolucao-tag {
     display: block;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #575756;
-    margin-bottom: 10px;
 }
 
 /* TÍTULO */
@@ -1485,7 +1484,7 @@ body {
 
 /* TEXTO */
 .centro-evolucao-text {
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.9;
     color: #4c5c6a;
     max-width: 380px;
@@ -1493,14 +1492,18 @@ body {
 
 /* CARD AZUL DA DIREITA */
 .centro-evolucao-card {
-    background: #00456c;
-    /* azul bem próximo do layout */
-    border-radius: 48px;
-    padding: 35px 70px;
+    background: #004264;
+    border-radius: 30px 30px 0 0;
+    padding: 17px 30px;
     color: #ffffff;
     display: flex;
     align-items: center;
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
+}
+
+.centro-evolucao-row>[class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* DUAS COLUNAS INTERNAS */
@@ -1519,7 +1522,7 @@ body {
     display: flex;
     align-items: center;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .centro-evolucao-item:last-child {
@@ -1537,16 +1540,36 @@ body {
 /* “pontilhado” no meio */
 .centro-evolucao-item .local-dots {
     flex: 1;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
     margin: 0 8px;
 }
 
 /* FAIXA DO ENDEREÇO (BEGE) */
 .centro-evolucao-address {
     background: #e5b88b;
-    margin-top: -2px;
-    padding: 12px 0;
+    padding: 11px 18px 15px 18px;
+    margin-top: auto;
     text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0b395c;
+    border-radius: 0;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.centro-evolucao-row {
+    align-items: flex-end;
+    /* base alinhada */
+}
+
+@media(max-width: 768px) {
+    .centro-evolucao-address {
+        margin-right: 0px;
+    }
 }
 
 /* texto da faixa */
@@ -1759,6 +1782,34 @@ body {
 @media(max-width: 1366px) {
     .housi-map-wrapper {
         margin-right: 0px;
+    }
+}
+
+@media(max-width: 1180px) {
+
+    .implantacao-textos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Centraliza o conteúdo interno */
+    .left-content {
+        text-align: center;
+        align-items: center;
+    }
+
+    /* Evita que o texto fique limitado ao width original */
+    .centro-evolucao-text {
+        max-width: 100%;
     }
 }
 
@@ -2171,4 +2222,19 @@ body {
     .mapa-section {
         height: 60vh;
     }
+}
+
+@media (min-width: 992px) {
+    .left-content {
+        padding-left: 60px;
+    }
+}
+
+@media (max-width: 991px) {
+    .left-content {
+        padding-left: 0;
+        /* mobile normal */
+        text-align: center;
+    }
+
 }
