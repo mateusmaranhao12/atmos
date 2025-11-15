@@ -1,3 +1,4 @@
+/*estrutura base*/
 html,
 body {
     width: 100%;
@@ -6,7 +7,58 @@ body {
 }
 
 body {
+    font-family: 'Flexo Regular', Arial, sans-serif;
+}
+
+/*Fontes*/
+/* FLEXO REGULAR */
+@font-face {
     font-family: 'Flexo Regular';
+    src: url('/fonts/Flexo-Regular.woff2') format('woff2'),
+        url('/fonts/Flexo-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FLEXO LIGHT */
+@font-face {
+    font-family: 'Flexo Light';
+    src: url('/fonts/Flexo-Light.woff2') format('woff2'),
+        url('/fonts/Flexo-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FLEXO DEMIBOLD */
+@font-face {
+    font-family: 'Flexo DemiBold';
+    src: url('/fonts/Flexo-DemiBold.woff2') format('woff2'),
+        url('/fonts/Flexo-DemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* FLEXO SEMIBOLD */
+@font-face {
+    font-family: 'Flexo SemiBold';
+    src: url('/fonts/Flexo-SemiBold.woff2') format('woff2'),
+        url('/fonts/Flexo-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* CIRCULAR AIR PRO */
+@font-face {
+    font-family: 'Circular Air Pro';
+    src: url('/fonts/CircularAirPro-Regular.woff2') format('woff2'),
+        url('/fonts/CircularAirPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 /*Navbar*/
@@ -27,7 +79,7 @@ body {
 }
 
 .atmos-link {
-    font-family: 'Flexo Light';
+    font-family: 'Flexo Light', Arial, sans-serif;
     color: rgba(255, 255, 255, 0.85) !important;
     font-size: 14px;
     letter-spacing: 2px;
@@ -69,7 +121,7 @@ body {
 /* Caixa de texto azul à esquerda */
 .hero-text-box {
     background-color: rgba(8, 58, 95, 0.90);
-    font-family: 'Flexo Regular';
+    font-family: 'Flexo Regular', Arial, sans-serif;
     padding: 40px 60px;
     max-width: 620px;
 }
@@ -88,7 +140,7 @@ body {
 
 /* Faixa "Nova Iguaçu - RJ" */
 .hero-location-pill {
-    font-family: 'Flexo DemiBold';
+    font-family: 'Flexo DemiBold', Arial, sans-serif;
     display: inline-block;
     padding: 10px 40px;
     background-color: #f2b47c;
@@ -111,7 +163,7 @@ body {
 }
 
 .hero-form-card h2 {
-    font-family: 'Flexo SemiBold';
+    font-family: 'Flexo SemiBold', Arial, sans-serif;
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -120,7 +172,7 @@ body {
 }
 
 .hero-form-subtitle {
-    font-family: 'Flexo Light';
+    font-family: 'Flexo Light', Arial, sans-serif;
     font-size: 14px;
     font-weight: 300;
     text-align: center;
@@ -157,7 +209,7 @@ body {
 
 /* Botão degradê dourado */
 .hero-btn {
-    font-family: 'Flexo SemiBold';
+    font-family: 'Flexo SemiBold', Arial, sans-serif;
     border: none;
     border-radius: 0;
     padding: 12px 0;
@@ -344,7 +396,7 @@ body {
     margin-top: -90px;
     position: relative;
     z-index: 2;
-    font-family: 'Circular Air Pro';
+    font-family: 'Circular Air Pro', Arial, sans-serif;
 }
 
 .gestao-title,
@@ -417,7 +469,7 @@ body {
     font-size: 22px;
     font-weight: 700;
     color: #e63895;
-    font-family: 'Circular Air Pro';
+    font-family: 'Circular Air Pro', Arial, sans-serif;
     margin-bottom: 12px;
 }
 
@@ -453,7 +505,7 @@ body {
     border-radius: 48px 0 0 48px;
     padding: 50px 60px;
     color: #ffffff;
-    font-family: 'Circular Air Pro';
+    font-family: 'Circular Air Pro', Arial, sans-serif;
 }
 
 /* cabeçalho */
