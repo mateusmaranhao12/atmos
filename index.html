@@ -901,48 +901,66 @@
     <!--Footer-->
     <footer id="contato" class="atmos-footer">
         <div class="container">
-            <div class="row align-items-start">
+            <div class="row align-items-center g-0">
 
                 <!-- COLUNA ESQUERDA -->
-                <div class="col-lg-7 mb-5 mb-lg-0 atmos-footer-left">
+                <div class="col-lg-7 atmos-footer-left">
 
-                    <!-- logos -->
+                    <!-- LOGOS ALINHADOS IGUAL AO PRINT -->
                     <div class="atmos-footer-logos">
-                        <!-- logo principal Atmos -->
-                        <img src="./imgs/logo.png" onclick="getAgencia()" alt="Atmos" class="atmos-logo-main">
-                        <!-- imagem única com os 3 logos brancos -->
-                        <img src="./imgs/footer1.png" alt="Parceiros" class="atmos-logo-partners">
-                    </div>
-
-                    <!-- redes sociais -->
-                    <div class="atmos-footer-social">
-                        <a onclick="getFacebook()" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a onclick="getInstagram()" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a onclick="getYoutube()" aria-label="YouTube">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a onclick="getWhatsApp()" aria-label="WhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                    </div>
-
-                    <!-- telefone / whatsapp / instagram -->
-                    <div class="atmos-footer-contact">
-                        <div class="atmos-footer-phone">
-                            <!-- aqui você pode usar uma imagem de ícone se quiser -->
-                            <img src="./imgs/footer2.png" alt="WhatsApp">
-                            <span>21 97220-4752</span>
-                        </div>
-
-                        <div class="atmos-footer-handle">
-                            <img src="./imgs/footer3.png" alt="@">
-                            <span>@atmosmarioguimaraes</span>
+                        <div class="row">
+                            <div class="col-12 col-xl-5">
+                                <img src="./imgs/logo.png" onclick="getAgencia()" alt="Atmos" class="atmos-logo-main">
+                            </div>
+                            <div class="col-12 col-md-7 mt-3">
+                                <img src="./imgs/footer1.png" alt="Parceiros" class="atmos-logo-partners">
+                            </div>
                         </div>
                     </div>
+
+                    <div class="row atmos-footer-icons">
+                        <div class="col-12 col-xl-4 mb-3 mb-md-0">
+                            <!-- REDES SOCIAIS IGUAIS AO PRINT -->
+                            <div class="atmos-footer-social">
+                                <a onclick="getFacebook()" aria-label="Facebook"><i
+                                        class="fa-brands fa-facebook-f fa-2x"></i></a>
+                                <a onclick="getInstagram()" aria-label="Instagram"><i
+                                        class="fa-brands fa-instagram fa-2x"></i></a>
+                                <a onclick="getYoutube()" aria-label="YouTube"><i class="fa-brands fa-youtube fa-2x"></i></a>
+                                <a onclick="getWhatsApp()" aria-label="WhatsApp"><i
+                                        class="fa-brands fa-whatsapp fa-2x"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-8">
+                            <!-- TELEFONE + @ HANDLE -->
+                            <div class="atmos-footer-contact">
+                                <div class="atmos-footer-phone">
+                                    <img src="./imgs/footer2.png" alt="WhatsApp">
+                                    <span style="font-weight: bold;">21 97220-4752</span>
+                                </div>
+
+                                <div class="atmos-footer-handle">
+                                    <img src="./imgs/footer3.png" alt="@">
+                                    <span>@atmosmarioguimaraes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXTO LEGAL -->
+                    <div class="atmos-footer-disclaimer mt-5 col-md-10">
+                        O empreendimento imobiliário encontra-se registrado sob o R.I. AC013801180 na matrícula nº
+                        64.561,
+                        nos termos do alvará de aprovação nº 164403/2025 de 30 de outubro de 2025, junto ao 2º REGISTRO
+                        DE
+                        IMÓVEIS DA 1ª CIRCUNSCRIÇÃO DE NOVA IGUAÇU/ RJ. As imagens e perspectivas do empreendimento são
+                        meramente ilustrativas e possuem sugestão de decoração e/ou de paisagismo, podendo ser alteradas
+                        sem
+                        prévio aviso. As áreas comuns e unidades serão entregues conforme memorial descritivo.
+                        Incorporadora
+                        responsável: OMEGA INC INCORPORADORA S.A. inscrita no CNPJ 41.382.866/0001-91
+                    </div>
+
                 </div>
 
                 <!-- COLUNA DIREITA – FORMULÁRIO -->
@@ -966,16 +984,6 @@
                 </div>
 
             </div>
-        </div>
-
-        <!-- faixa de texto legal -->
-        <div class="atmos-footer-disclaimer">
-            O empreendimento imobiliário encontra-se registrado sob o R.I. AC013801180 na matrícula nº 64.561,
-            nos termos do alvará de aprovação nº 164403/2025 de 30 de outubro de 2025, junto ao 2º REGISTRO DE
-            IMÓVEIS DA 1ª CIRCUNSCRIÇÃO DE NOVA IGUAÇU/ RJ. As imagens e perspectivas do empreendimento são
-            meramente ilustrativas e possuem sugestão de decoração e/ou de paisagismo, podendo ser alteradas sem
-            prévio aviso. As áreas comuns e unidades serão entregues conforme memorial descritivo. Incorporadora
-            responsável: OMEGA INC INCORPORADORA S.A. inscrita no CNPJ 41.382.866/0001-91
         </div>
     </footer>
     <footer class="footer-2">

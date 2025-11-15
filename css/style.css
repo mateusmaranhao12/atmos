@@ -1587,7 +1587,7 @@ body {
 /*Mapa section*/
 .mapa-section {
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     margin-top: 0;
     padding: 0;
     position: relative;
@@ -1611,7 +1611,7 @@ body {
 
 /* Coluna esquerda */
 .atmos-footer-left {
-    text-align: left;
+    padding-top: 40px;
 }
 
 /* logos */
@@ -1619,13 +1619,11 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .atmos-logo-main {
-    max-height: 70px;
-    height: auto;
+    height: 65px;
     transition: .2s ease;
 }
 
@@ -1635,23 +1633,34 @@ body {
 }
 
 .atmos-logo-partners {
-    max-height: 60px;
-    height: auto;
+    height: 40px;
 }
 
 /* Ícones sociais (quadrados) */
 .atmos-footer-social {
     display: flex;
-    gap: 10px;
+    margin-top: 50px;
+    gap: 15px;
     margin-bottom: 25px;
     color: #004264;
     cursor: pointer;
+    width: max-content;
+    flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+    .atmos-footer-social {
+        margin-top: 0;
+    }
+
+    .atmos-footer-contact {
+        font-size: 100%;
+    }
 }
 
 .atmos-footer-social a {
-    width: 34px;
-    height: 34px;
-    border-radius: 4px;
+    width: 44px;
+    height: 44px;
     background-color: #e5bf9a;
     display: inline-flex;
     align-items: center;
@@ -1669,8 +1678,9 @@ body {
 
 /* telefone + instagram */
 .atmos-footer-contact {
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 0;
+    /* tira o espaçamento extra */
+    font-size: 25px;
     font-weight: 500;
 }
 
@@ -1687,6 +1697,46 @@ body {
     height: 32px;
 }
 
+.atmos-footer-icons {
+    margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+    .atmos-footer-icon {
+        margin-top: 0px;
+    }
+
+    .atmos-footer-icons {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .atmos-footer-icons .col-md-4,
+    .atmos-footer-icons .col-md-8 {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ícones sociais centralizados */
+    .atmos-footer-social {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    /* telefone + @ centralizados em coluna */
+    .atmos-footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .atmos-footer-phone,
+    .atmos-footer-handle {
+        justify-content: center;
+    }
+}
 
 /* Coluna direita – formulário */
 .atmos-footer-right {
@@ -1694,14 +1744,16 @@ body {
 }
 
 .atmos-footer-form-title {
+    color: #b99464;
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .atmos-footer-form-sub {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 25px;
 }
 
@@ -1713,7 +1765,7 @@ body {
 .atmos-footer-form textarea {
     width: 100%;
     background-color: #003653;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid #afc7e0;
     color: #ffffff;
     font-size: 13px;
     padding: 10px 12px;
@@ -1723,14 +1775,15 @@ body {
 
 .atmos-footer-form input::placeholder,
 .atmos-footer-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.65);
+    color: #afc7e0;
+    font-style: italic;
 }
 
 .atmos-footer-form input:focus,
 .atmos-footer-form textarea:focus {
     outline: none !important;
     box-shadow: none !important;
-    border-color: rgba(255, 255, 255, .6) !important;
+    border-color: white !important;
     background-color: #003653 !important;
 }
 
@@ -1742,11 +1795,12 @@ body {
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #d59557 0%, #f2c18b 50%, #d59557 100%);
-    color: #004264;
+    background: linear-gradient(90deg, #b06d51, #ca986b, #f1cba5, #b06d51);
+    color: #fff;
     cursor: pointer;
     transition: .2s ease;
     margin-bottom: 10px;
+    width: 180px;
 }
 
 .atmos-footer-btn:hover {
@@ -1760,19 +1814,23 @@ body {
     color: #ffffff;
     font-size: 10px;
     line-height: 1.4;
-    padding: 10px 40px 5px;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: start;
 }
 
 .footer-2 {
     background-color: #062837;
-    padding: 20px;
+    padding: 10px;
 }
 
 .footer-2-text {
     color: #afc7e0;
     text-align: end;
+}
+
+@media (max-width: 767px) {
+    .footer-2-text {
+        text-align: center;
+    }
 }
 
 .footer-2-text span {
@@ -1782,6 +1840,26 @@ body {
 @media(max-width: 1366px) {
     .housi-map-wrapper {
         margin-right: 0px;
+    }
+
+    /* desce um pouco o bloco dos ícones + telefone */
+    .atmos-footer-icons {
+        margin-top: 20px;
+    }
+
+    .atmos-footer-social {
+        margin-top: 30px;  /* você pode testar 25–35 pra chegar no ponto perfeito */
+    }
+
+    /* puxa o telefone/@ um pouquinho para a esquerda */
+    .atmos-footer-contact {
+        margin-left: -15px; /* se ainda parecer longe, testa -20 */
+    }
+
+    /* garante alinhamento vertical mais suave */
+    .atmos-footer-phone,
+    .atmos-footer-handle {
+        align-items: center;
     }
 }
 
@@ -2073,7 +2151,7 @@ body {
     }
 
     .atmos-footer-social {
-        justify-content: center;
+        justify-content: center !important;
     }
 
     .atmos-footer-contact {
@@ -2159,6 +2237,10 @@ body {
     .nova-experiencia iframe {
         transform: translateY(40px);
         border-radius: 8px;
+    }
+
+    .atmos-footer-btn {
+        width: 100%;
     }
 }
 
