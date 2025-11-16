@@ -23,75 +23,131 @@ function getYoutube() {
 //Carrossels
 
 //Carrossel lazer
-// Zoom interno no carrossel de Lazer
+// IMAGEM PRINCIPAL DO CARROSSEL
 const mainImgLazer = document.getElementById('carousel-main-img')
-const carouselMain = document.querySelector('.carousel-main')
 
-if (mainImgLazer && carouselMain) {
-    let isZoomed = false
-
-    // Clique para ativar/desativar o zoom
-    mainImgLazer.addEventListener('click', function () {
-        isZoomed = !isZoomed
-
-        if (isZoomed) {
-            this.classList.add('zoomed')
-        } else {
-            this.classList.remove('zoomed')
-            this.style.transformOrigin = '50% 50%'
-        }
-    });
-
-    // Movimenta o zoom com o mouse dentro do card
-    carouselMain.addEventListener('mousemove', function (e) {
-        if (!isZoomed) return;
-
-        const rect = this.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100
-        const y = ((e.clientY - rect.top) / rect.height) * 100
-
-        // muda o "ponto de zoom" conforme a posição do mouse
-        mainImgLazer.style.transformOrigin = `${x}% ${y}%`
-    });
-}
-
-
-//Carrossel plantas e implantacao
-const mainImg = document.getElementById('carousel-main-img')
+// MINIATURAS
 const thumbs = document.querySelectorAll('.carousel-thumbs .thumb')
+
+// MODAL
+const lazerModal = document.getElementById('lazer-modal')
+const lazerModalImg = document.getElementById('lazer-modal-img')
+const lazerModalClose = document.querySelector('.lazer-modal-close')
+
+// SETAS INTERNAS DO MODAL
+const modalArrowLeft = document.querySelector('.modal-arrow-left')
+const modalArrowRight = document.querySelector('.modal-arrow-right')
+
+// SETAS DO CARROSSEL
+const rightBtn = document.querySelector('.right-btn')
+const leftBtn = document.querySelector('.left-btn')
 
 let index = 0
 
-function updateMainImage(i) {
-    mainImg.style.opacity = 0
+// Se alguma thumb já estiver active, define o index inicial
+thumbs.forEach((thumb, i) => {
+    if (thumb.classList.contains('active')) {
+        index = i
+    }
+})
 
+// FUNÇÃO PRINCIPAL — ATUALIZA TUDO COM UMA ÚNICA IMAGEM
+function updateMainImage(i) {
+    index = (i + thumbs.length) % thumbs.length
+
+    const imgSrc = thumbs[index].src
+
+    // troca suave na imagem principal
+    mainImgLazer.style.opacity = 0
     setTimeout(() => {
-        mainImg.src = thumbs[i].src
-        mainImg.style.opacity = 1
+        mainImgLazer.src = imgSrc
+        mainImgLazer.style.opacity = 1
     }, 200)
 
-    thumbs.forEach(t => t.classList.remove('active'))
-    thumbs[i].classList.add('active')
+    // troca no modal também
+    lazerModalImg.src = imgSrc
 
-    index = i
+    // atualiza as active das miniaturas
+    thumbs.forEach(t => t.classList.remove('active'))
+    thumbs[index].classList.add('active')
+}
+// MODAL
+function openLazerModal() {
+    lazerModalImg.src = mainImgLazer.src
+    lazerModal.classList.add('open')
+    document.body.classList.add('modal-open') // trava scroll
 }
 
-// miniaturas clicáveis
+function closeLazerModal() {
+    lazerModal.classList.remove('open')
+    document.body.classList.remove('modal-open') // destrava scroll
+}
+
+// abrir modal ao clicar na imagem principal
+if (mainImgLazer) {
+    mainImgLazer.addEventListener('click', openLazerModal)
+}
+
+// fechar modal (botão X)
+if (lazerModalClose) {
+    lazerModalClose.addEventListener('click', closeLazerModal)
+}
+
+// fechar clicando fora da imagem
+lazerModal.addEventListener('click', (e) => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+
+    if (e.target.closest('.modal-arrow') || e.target.closest('.lazer-modal-close')) {
+        return
+    }
+
+    if (isMobile) {
+        closeLazerModal()
+    } else {
+        if (e.target === lazerModal) {
+            closeLazerModal()
+        }
+    }
+})
+
+
+// fechar com ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLazerModal()
+})
+
+// SETAS DENTRO DO MODAL
+if (modalArrowRight) {
+    modalArrowRight.addEventListener('click', (e) => {
+        e.stopPropagation()
+        updateMainImage(index + 1)
+    })
+}
+
+if (modalArrowLeft) {
+    modalArrowLeft.addEventListener('click', (e) => {
+        e.stopPropagation()
+        updateMainImage(index - 1)
+    })
+}
+
+// MINIATURAS DO CARROSSEL
 thumbs.forEach((thumb, i) => {
     thumb.addEventListener('click', () => updateMainImage(i))
 })
 
-// seta direita
-document.querySelector('.right-btn').addEventListener('click', () => {
-    index = (index + 1) % thumbs.length
-    updateMainImage(index)
-})
+// SETAS DO CARROSSEL PRINCIPAL
+if (rightBtn) {
+    rightBtn.addEventListener('click', () => {
+        updateMainImage(index + 1)
+    })
+}
 
-// seta esquerda
-document.querySelector('.left-btn').addEventListener('click', () => {
-    index = (index - 1 + thumbs.length) % thumbs.length
-    updateMainImage(index)
-})
+if (leftBtn) {
+    leftBtn.addEventListener('click', () => {
+        updateMainImage(index - 1)
+    })
+}
 
 //ampliar imagem planta
 document.addEventListener('DOMContentLoaded', () => {
