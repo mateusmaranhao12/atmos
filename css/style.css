@@ -1086,7 +1086,7 @@ body {
 
 .carousel-thumbs img.active {
     opacity: 1;
-    border: 3px solid #fff;
+    border: 3px solid #b06d51;
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
