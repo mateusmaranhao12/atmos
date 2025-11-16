@@ -8,6 +8,7 @@ body {
 
 body {
     font-family: 'Flexo Regular', Arial, sans-serif;
+    padding-top: 70px;
 }
 
 /*Fontes*/
@@ -64,8 +65,12 @@ body {
 /*Navbar*/
 .atmos-nav {
     background: #004264;
-    /* azul escuro */
     padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 .logo_navbar {
