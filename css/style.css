@@ -1293,7 +1293,6 @@ body {
     .lazer-modal {
         padding: 0;
         background: rgba(0, 0, 0, 0.9);
-        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -1314,6 +1313,7 @@ body {
     .lazer-modal-content img {
         width: auto;
         height: auto;
+
         max-width: 100vw;
         max-height: 95vh;
         object-fit: contain;
