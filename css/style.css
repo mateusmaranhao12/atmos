@@ -990,10 +990,12 @@ body {
 }
 
 /*Carrossel lazer*/
+
 .lazer-carousel-section {
     padding: 0 0 80px;
     margin-top: -40px;
     background: #004264;
+    background: linear-gradient(180deg, rgba(0, 66, 100, 1) 0%, rgba(0, 66, 100, 1) 60%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 1) 100%);
 }
 
 /* ÁREA PRINCIPAL DO CARROSSEL */
@@ -1007,15 +1009,21 @@ body {
 /* IMAGEM PRINCIPAL */
 .carousel-main {
     width: 70%;
-    border-radius: 40px 40px 0 0;
     overflow: hidden;
+    border-radius: 40px 40px 0 0;
+    cursor: zoom-in;
+    position: relative;
 }
 
 .carousel-main img {
     width: 100%;
     display: block;
-    border-radius: 40px;
     transition: opacity 0.4s ease;
+}
+
+.carousel-main img.zoomed {
+    cursor: zoom-out;
+    transform: scale(2);
 }
 
 /* SETAS DO CARROSSEL */
@@ -1040,11 +1048,11 @@ body {
 }
 
 .left-btn {
-    left: 80px;
+    left: 120px;
 }
 
 .right-btn {
-    right: 80px;
+    right: 120px;
 }
 
 /* FUNDO BEGE DAS MINIATURAS */
@@ -1056,9 +1064,8 @@ body {
     gap: 20px;
     justify-content: center;
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     margin-top: -20px;
-    border-radius: 40px;
 }
 
 /* MINIATURAS */
@@ -1080,6 +1087,36 @@ body {
 .carousel-thumbs img.active {
     opacity: 1;
     border: 3px solid #fff;
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    /* reduz tamanho das thumbs */
+    .carousel-thumbs img {
+        width: 95px;
+        height: 62px;
+    }
+
+    /* deixa a barra dourada mais estreita e proporcional */
+    .carousel-thumbs {
+        width: 85%;
+        gap: 14px;
+        padding: 18px 28px;
+        margin-top: -15px;
+    }
+
+    .carousel-main {
+        width: 85%;
+    }
+
+    /* setas mais próximas */
+    .left-btn {
+        left: 20px;
+    }
+
+    .right-btn {
+        right: 20px;
+    }
 }
 
 /*Plantas*/
@@ -2134,8 +2171,8 @@ body {
 
     /* faixa de thumbs ocupa toda largura e vira “carrossel horizontal” */
     .carousel-thumbs {
-        width: 100%;
-        padding: 14px 14px 18px;
+        width: 80%;
+        padding: 34px 14px 18px;
         gap: 12px;
         overflow-x: auto;
         justify-content: flex-start;
@@ -2146,7 +2183,6 @@ body {
         width: 96px;
         height: 64px;
         flex: 0 0 auto;
-        /* não encolher */
     }
 
     .plantas-section {
