@@ -291,7 +291,7 @@ body {
     position: relative;
     z-index: 2;
     color: #ffffff;
-    max-width: 480px;
+    max-width: 490px;
 }
 
 .residencial-label {
@@ -326,7 +326,31 @@ body {
 }
 
 .residencial-bear {
-    max-width: 380px;
+    max-width: 480px;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .residencial-bear-wrapper {
+        margin-top: 20px;
+        text-align: right;
+        margin-right: -40px;
+    }
+
+    .residencial-bear {
+        max-width: 510px;
+    }
+}
+
+/* DESKTOP GRANDE – 1600px+ */
+@media (min-width: 1600px) {
+    .residencial-bear-wrapper {
+        margin-right: -80px;
+    }
+
+    .residencial-bear {
+        max-width: 520px;
+    }
 }
 
 .residencial-card-image-wrapper {
@@ -375,7 +399,7 @@ body {
 
 .marcas-text {
     color: #ffffff;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
     opacity: 0.9;
     margin: 0;
@@ -408,6 +432,20 @@ body {
     .marcas-left-box {
         max-width: 100%;
         padding: 40px 40px;
+    }
+}
+
+/* Desktop médio – a partir de 1200px */
+@media (min-width: 1200px) {
+    .marcas-section .residencial-left-content {
+        margin-left: 10%;
+    }
+}
+
+/* Desktop bem largo – a partir de 1440px */
+@media (min-width: 1440px) {
+    .marcas-section .residencial-left-content {
+        margin-left: 16%;
     }
 }
 
