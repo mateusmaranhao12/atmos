@@ -288,7 +288,6 @@ body {
 .residencial-title {
     font-size: 32px;
     font-weight: 300;
-    margin-top: 20px;
     line-height: 1.4;
     color: #e5bf9a;
 }
@@ -299,18 +298,19 @@ body {
 }
 
 .residencial-text {
-    font-size: 14px;
-    margin-top: 25px;
+    font-size: 18px;
+    margin-top: 45px;
     line-height: 1.7;
     opacity: 0.9;
 }
 
 .residencial-bear-wrapper {
     margin-top: 40px;
+    text-align: end;
 }
 
 .residencial-bear {
-    max-width: 460px;
+    max-width: 380px;
 }
 
 .residencial-card-image-wrapper {
@@ -319,8 +319,8 @@ body {
 }
 
 .residencial-final-img {
-    max-width: 460px;
     width: 100%;
+    height: auto;
     margin-left: auto;
     display: block;
 }
