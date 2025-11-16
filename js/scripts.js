@@ -21,23 +21,24 @@ function getYoutube() {
 }
 
 //Carrossels
+
 //Carrossel lazer
 // Zoom interno no carrossel de Lazer
-const mainImgLazer = document.getElementById('carousel-main-img');
-const carouselMain = document.querySelector('.carousel-main');
+const mainImgLazer = document.getElementById('carousel-main-img')
+const carouselMain = document.querySelector('.carousel-main')
 
 if (mainImgLazer && carouselMain) {
-    let isZoomed = false;
+    let isZoomed = false
 
     // Clique para ativar/desativar o zoom
     mainImgLazer.addEventListener('click', function () {
-        isZoomed = !isZoomed;
+        isZoomed = !isZoomed
 
         if (isZoomed) {
-            this.classList.add('zoomed');
+            this.classList.add('zoomed')
         } else {
-            this.classList.remove('zoomed');
-            this.style.transformOrigin = '50% 50%';
+            this.classList.remove('zoomed')
+            this.style.transformOrigin = '50% 50%'
         }
     });
 
@@ -46,11 +47,11 @@ if (mainImgLazer && carouselMain) {
         if (!isZoomed) return;
 
         const rect = this.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        const x = ((e.clientX - rect.left) / rect.width) * 100
+        const y = ((e.clientY - rect.top) / rect.height) * 100
 
         // muda o "ponto de zoom" conforme a posição do mouse
-        mainImgLazer.style.transformOrigin = `${x}% ${y}%`;
+        mainImgLazer.style.transformOrigin = `${x}% ${y}%`
     });
 }
 
