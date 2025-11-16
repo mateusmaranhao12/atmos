@@ -222,8 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //carrossel plantas
+// CARROSSEL + MODAL PLANTAS
 document.addEventListener('DOMContentLoaded', () => {
-    //dados do carrossel
+    // Dados do carrossel
     const plantasData = {
         cobertura: [
             {
@@ -358,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     }
 
-    // ELEMENTOS DA TELA
+    //elementos na tela
     const imgWrapper = document.querySelector('.plantas-img-wrapper')
     const img = document.querySelector('.plantas-img')
     const legendaSpan = document.querySelector('.plantas-legenda')
@@ -366,17 +367,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const zoomBtn = document.querySelector('.plantas-ampliar-btn')
     const paginationContainer = document.querySelector('.plantas-pagination')
 
-    // vamos guardar as páginas criadas aqui
-    let paginas = []
+    // MODAL
+    const plantasModal = document.getElementById('plantas-modal')
+    const plantasModalImg = document.getElementById('plantas-modal-img')
+    const plantasModalClose = document.querySelector('.plantas-modal-close')
+    const plantasModalArrowLeft = document.querySelector('.plantas-modal-arrow-left')
+    const plantasModalArrowRight = document.querySelector('.plantas-modal-arrow-right')
 
-    // estado atual
-    let currentTab = 'cobertura' // 'cobertura' ou 'tipo'
+    if (!img || !legendaSpan || !paginationContainer || !plantasModal || !plantasModalImg) return
+
+    let paginas = []
+    let currentTab = 'cobertura'
     let currentIndex = 0
 
-    // ------------ PAGINAÇÃO DINÂMICA -------------
+    // --------- PAGINAÇÃO DINÂMICA ---------
     function criarPaginacao() {
         const total = plantasData[currentTab].length
-
         paginationContainer.innerHTML = ''
         paginas = []
 
@@ -395,94 +401,106 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //Renderizar planta
+    // --------- RENDERIZAR PLANTA ---------
     function renderPlanta() {
         const data = plantasData[currentTab][currentIndex]
+        if (!data) return
 
         img.src = data.src
         legendaSpan.textContent = data.legenda
 
-        // atualiza páginas ativas
+        // atualiza imagem do modal também (se ele já estiver aberto)
+        plantasModalImg.src = data.src
+
         paginas.forEach((page, i) => {
             page.classList.toggle('active', i === currentIndex)
         })
-
-        resetZoom()
     }
 
-    // ------------ ZOOM + ARRASTAR -------------
-    let isZoomed = false
-    let isDragging = false
-    let startX = 0
-    let startY = 0
-    let currentX = 0
-    let currentY = 0
-    const zoomFactor = 2.3
-
-    function resetZoom() {
-        isZoomed = false
-        isDragging = false
-        currentX = 0
-        currentY = 0
-        imgWrapper.classList.remove('dragging')
-        img.classList.remove('zoomed')
-        img.style.transform = 'scale(1) translate(0, 0)'
+    // --------- MODAL PLANTAS ---------
+    function openPlantasModal() {
+        plantasModalImg.src = img.src
+        plantasModal.classList.add('open')
+        document.body.classList.add('modal-open')
     }
 
-    // botão ampliar
-    zoomBtn.addEventListener('click', () => {
-        isZoomed = !isZoomed
+    function closePlantasModal() {
+        plantasModal.classList.remove('open')
+        document.body.classList.remove('modal-open')
+    }
 
-        if (!isZoomed) {
-            resetZoom()
+    // abrir modal ao clicar no botão "ampliar" OU na própria imagem
+    if (zoomBtn) {
+        zoomBtn.addEventListener('click', openPlantasModal)
+    }
+
+    if (imgWrapper) {
+        imgWrapper.addEventListener('click', openPlantasModal)
+    }
+
+    // fechar no X
+    if (plantasModalClose) {
+        plantasModalClose.addEventListener('click', closePlantasModal)
+    }
+
+    // fechar clicando no fundo (comportamento mobile x desktop)
+    plantasModal.addEventListener('click', (e) => {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches
+        const target = e.target
+
+        if (!(target instanceof HTMLElement)) return
+
+        // clicou nas setas ou no X → outro handler cuida
+        if (target.closest('.plantas-modal-arrow') || target.closest('.plantas-modal-close')) {
             return
         }
 
-        img.classList.add('zoomed')
-        img.style.transform = `scale(${zoomFactor}) translate(0, 0)`
+        if (isMobile) {
+            closePlantasModal()
+        } else {
+            if (target === plantasModal) {
+                closePlantasModal()
+            }
+        }
     })
 
-    // drag
-    function startDrag(e) {
-        if (!isZoomed) return
-        isDragging = true
-        imgWrapper.classList.add('dragging')
+    // fechar com ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closePlantasModal()
+        }
+    })
 
-        startX = e.clientX || e.touches[0].clientX
-        startY = e.clientY || e.touches[0].clientY
+    //NAVEGAÇÃO NO MODAL (SETAS)
+    function nextPlanta() {
+        const total = plantasData[currentTab].length
+        if (!total) return
+
+        currentIndex = (currentIndex + 1) % total
+        renderPlanta()
     }
 
-    function onDrag(e) {
-        if (!isDragging || !isZoomed) return
+    function prevPlanta() {
+        const total = plantasData[currentTab].length
+        if (!total) return
 
-        const x = e.clientX || e.touches[0].clientX
-        const y = e.clientY || e.touches[0].clientY
-
-        const dx = x - startX
-        const dy = y - startY
-
-        startX = x
-        startY = y
-
-        currentX += dx
-        currentY += dy
-
-        img.style.transform = `scale(${zoomFactor}) translate(${currentX}px, ${currentY}px)`
+        currentIndex = (currentIndex - 1 + total) % total
+        renderPlanta()
     }
 
-    function stopDrag() {
-        isDragging = false
-        imgWrapper.classList.remove('dragging')
+    if (plantasModalArrowRight) {
+        plantasModalArrowRight.addEventListener('click', (e) => {
+            e.stopPropagation()
+            nextPlanta()
+        })
     }
 
-    imgWrapper.addEventListener('mousedown', startDrag)
-    imgWrapper.addEventListener('mousemove', onDrag)
-    imgWrapper.addEventListener('mouseup', stopDrag)
-    imgWrapper.addEventListener('mouseleave', stopDrag)
-
-    imgWrapper.addEventListener('touchstart', startDrag)
-    imgWrapper.addEventListener('touchmove', onDrag)
-    imgWrapper.addEventListener('touchend', stopDrag)
+    if (plantasModalArrowLeft) {
+        plantasModalArrowLeft.addEventListener('click', (e) => {
+            e.stopPropagation()
+            prevPlanta()
+        })
+    }
 
     //TABS COBERTURA / TIPO
     tabs.forEach((tabBtn) => {
@@ -498,7 +516,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    //Init
     criarPaginacao()
     renderPlanta()
 })

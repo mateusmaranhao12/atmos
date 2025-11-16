@@ -1474,22 +1474,6 @@ body {
     transition: transform 0.25s ease;
 }
 
-/* Quando estiver em zoom */
-.plantas-img.zoomed {
-    transform: scale(2.3);
-}
-
-/* feedback visual no botão quando estiver em zoom */
-.plantas-ampliar-btn.zoom-active {
-    background-color: #0b395c;
-    color: #fff;
-}
-
-.plantas-ampliar-btn.zoom-active i {
-    transform: rotate(45deg);
-    transition: transform 0.2s ease;
-}
-
 /* rodapé do card */
 .plantas-card-footer {
     display: flex;
@@ -1575,6 +1559,138 @@ body {
     background: #0b395c;
     color: #ffffff;
 }
+
+/* MODAL PLANTAS - BASE */
+.plantas-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 24px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.plantas-modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+.plantas-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plantas-modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Botão fechar */
+.plantas-modal-close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SETAS DO MODAL DE PLANTAS */
+.plantas-modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 32px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.plantas-modal-arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.plantas-modal-arrow-left {
+    left: 16px;
+}
+
+.plantas-modal-arrow-right {
+    right: 16px;
+}
+
+/* MOBILE - fullscreen amigável */
+@media (max-width: 768px) {
+    .plantas-modal {
+        padding: 0;
+        background: rgba(0, 0, 0, 0.95);
+    }
+
+    .plantas-modal-content {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+
+    .plantas-modal-content img {
+        width: auto;
+        height: auto;
+        max-width: 100vw;
+        max-height: 95vh;
+        object-fit: contain;
+        border-radius: 0;
+    }
+
+    .plantas-modal-close {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+
+    .plantas-modal-arrow {
+        font-size: 26px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* opcional, igual usamos no lazer */
+body.modal-open {
+    overflow: hidden;
+}
+
 
 /*Implantacao*/
 .implantacao-section {
