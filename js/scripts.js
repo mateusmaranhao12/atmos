@@ -530,145 +530,151 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: './imgs/IMPLANTACAO/GARAGEM_4PAV.png' },
         { src: './imgs/IMPLANTACAO/IMPLANTACAO_APTO_TIPO.png' },
         { src: './imgs/IMPLANTACAO/IMPLANTACAO_APTO_TIPO_PCD.png' }
-    ];
+    ]
 
-    const impWrapper = document.querySelector('.implantacao-img-wrapper');
-    if (!impWrapper) return;
+    const impWrapper = document.querySelector('.implantacao-img-wrapper')
+    if (!impWrapper) return
 
-    const impImg = document.querySelector('.implantacao-img');
-    const impPrevBtn = document.querySelector('.implantacao-arrow.arrow-left');
-    const impNextBtn = document.querySelector('.implantacao-arrow.arrow-right');
-    const impDotsContainer = document.querySelector('.implantacao-dots');
-    const impZoomBtn = document.querySelector('.implantacao-ampliar-btn');
+    const impImg = document.querySelector('.implantacao-img')
+    const impPrevBtn = document.querySelector('.implantacao-arrow.arrow-left')
+    const impNextBtn = document.querySelector('.implantacao-arrow.arrow-right')
+    const impDotsContainer = document.querySelector('.implantacao-dots')
+    const impZoomBtn = document.querySelector('.implantacao-ampliar-btn')
 
-    let impIndex = 0;
+    // MODAL
+    const impModal = document.getElementById('implantacao-modal')
+    const impModalImg = document.getElementById('implantacao-modal-img')
+    const impModalClose = document.querySelector('.implantacao-modal-close')
+    const impModalArrowLeft = document.querySelector('.implantacao-modal-arrow-left')
+    const impModalArrowRight = document.querySelector('.implantacao-modal-arrow-right')
 
-    //bolinhas
-    impDotsContainer.innerHTML = '';
-    const impDots = implantacaoSlides.map((_, i) => {
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        impDotsContainer.appendChild(dot);
+    let impIndex = 0
+    let impDots = []
+
+    //BOLINHAS
+    impDotsContainer.innerHTML = ''
+    impDots = implantacaoSlides.map((_, i) => {
+        const dot = document.createElement('span')
+        dot.className = 'dot' + (i === 0 ? ' active' : '')
+        impDotsContainer.appendChild(dot)
 
         dot.addEventListener('click', () => {
-            impIndex = i;
-            renderImplantacao();
-        });
+            impIndex = i
+            renderImplantacao()
+        })
 
-        return dot;
-    });
+        return dot
+    })
 
-    //Renderiza imagem atual
+    //RENDERIZA SLIDE
     function renderImplantacao() {
-        const slide = implantacaoSlides[impIndex];
-        impImg.src = slide.src;
+        const slide = implantacaoSlides[impIndex]
+        if (!slide) return
 
-        impDots.forEach((d, i) => d.classList.toggle('active', i === impIndex));
+        impImg.src = slide.src
+        impModalImg.src = slide.src
 
-        resetImplantacaoZoom(); // sempre reseta o zoom ao trocar de imagem
+        impDots.forEach((d, i) => d.classList.toggle('active', i === impIndex))
     }
 
-    // Setas
-    impPrevBtn.addEventListener('click', () => {
-        impIndex = (impIndex - 1 + implantacaoSlides.length) % implantacaoSlides.length;
-        renderImplantacao();
-    });
-
-    impNextBtn.addEventListener('click', () => {
-        impIndex = (impIndex + 1) % implantacaoSlides.length;
-        renderImplantacao();
-    });
-
-    // Zoom + Arrastar
-    let impIsZoomed = false;
-    let impIsDragging = false;
-    let impStartX = 0;
-    let impStartY = 0;
-    let impCurrentX = 0;
-    let impCurrentY = 0;
-    const impZoomFactor = 2.3;
-
-    function resetImplantacaoZoom() {
-        impIsZoomed = false;
-        impIsDragging = false;
-        impCurrentX = 0;
-        impCurrentY = 0;
-
-        impWrapper.classList.remove('implantacao-dragging');
-        impImg.classList.remove('implantacao-zoomed');
-        impImg.style.transform = 'scale(1) translate(0, 0)';
-
-        if (impZoomBtn) {
-            impZoomBtn.classList.remove('is-zoomed');
-            // MESMO ESTILO DO ANTERIOR: "ampliar" + ícone X quando ativo
-            impZoomBtn.innerHTML = 'ampliar <i class="fa-solid fa-plus"></i>';
-        }
+    //CARROSSEL PRINCIPAL (SETAS)
+    if (impPrevBtn) {
+        impPrevBtn.addEventListener('click', (e) => {
+            e.stopPropagation() // não deixa o clique subir pro wrapper
+            impIndex = (impIndex - 1 + implantacaoSlides.length) % implantacaoSlides.length
+            renderImplantacao()
+        })
     }
 
-    // Botão ampliar / reduzir
+    if (impNextBtn) {
+        impNextBtn.addEventListener('click', (e) => {
+            e.stopPropagation() // idem
+            impIndex = (impIndex + 1) % implantacaoSlides.length
+            renderImplantacao()
+        })
+    }
+
+    //MODAL
+    function openImplantacaoModal() {
+        impModalImg.src = impImg.src
+        impModal.classList.add('open')
+        document.body.classList.add('modal-open')
+    }
+
+    function closeImplantacaoModal() {
+        impModal.classList.remove('open')
+        document.body.classList.remove('modal-open')
+    }
+
+    // abrir modal ao clicar no botão "ampliar" ou na PRÓPRIA IMAGEM
     if (impZoomBtn) {
-        impZoomBtn.addEventListener('click', () => {
-            impIsZoomed = !impIsZoomed;
+        impZoomBtn.addEventListener('click', openImplantacaoModal)
+    }
 
-            if (!impIsZoomed) {
-                resetImplantacaoZoom();
-                return;
+    if (impImg) {
+        impImg.addEventListener('click', openImplantacaoModal)
+    }
+
+    impWrapper.addEventListener('click', openImplantacaoModal)
+
+    // fechar no X
+    if (impModalClose) {
+        impModalClose.addEventListener('click', closeImplantacaoModal)
+    }
+
+    // fechar clicando no fundo (mobile = qualquer toque, desktop = só overlay)
+    impModal.addEventListener('click', (e) => {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches
+        const target = e.target
+
+        if (!(target instanceof HTMLElement)) return
+
+        // se clicou nas setas ou no X, não fecha aqui
+        if (target.closest('.implantacao-modal-arrow') || target.closest('.implantacao-modal-close')) {
+            return
+        }
+
+        if (isMobile) {
+            closeImplantacaoModal()
+        } else {
+            if (target === impModal) {
+                closeImplantacaoModal()
             }
+        }
+    })
 
-            impImg.classList.add('implantacao-zoomed');
-            impImg.style.transform = `scale(${impZoomFactor}) translate(0, 0)`;
+    // fechar com ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeImplantacaoModal()
+        }
+    })
 
-            impZoomBtn.classList.add('is-zoomed');
-            // aqui fica igual ao print anterior: texto + X
-            impZoomBtn.innerHTML = 'ampliar <i class="fa-solid fa-xmark"></i>';
-        });
+    //NAVEGAÇÃO DENTRO DO MODAL (SETAS)
+    function nextImplantacao() {
+        impIndex = (impIndex + 1) % implantacaoSlides.length
+        renderImplantacao()
     }
 
-    function startImpDrag(e) {
-        if (!impIsZoomed) return;
-
-        impIsDragging = true;
-        impWrapper.classList.add('implantacao-dragging');
-
-        const point = e.touches ? e.touches[0] : e;
-        impStartX = point.clientX;
-        impStartY = point.clientY;
+    function prevImplantacao() {
+        impIndex = (impIndex - 1 + implantacaoSlides.length) % implantacaoSlides.length
+        renderImplantacao()
     }
 
-    function onImpDrag(e) {
-        if (!impIsDragging || !impIsZoomed) return;
-
-        e.preventDefault();
-
-        const point = e.touches ? e.touches[0] : e;
-        const dx = point.clientX - impStartX;
-        const dy = point.clientY - impStartY;
-
-        impStartX = point.clientX;
-        impStartY = point.clientY;
-
-        impCurrentX += dx;
-        impCurrentY += dy;
-
-        impImg.style.transform = `scale(${impZoomFactor}) translate(${impCurrentX}px, ${impCurrentY}px)`;
+    if (impModalArrowRight) {
+        impModalArrowRight.addEventListener('click', (e) => {
+            e.stopPropagation()
+            nextImplantacao()
+        })
     }
 
-    function stopImpDrag() {
-        impIsDragging = false;
-        impWrapper.classList.remove('implantacao-dragging');
+    if (impModalArrowLeft) {
+        impModalArrowLeft.addEventListener('click', (e) => {
+            e.stopPropagation()
+            prevImplantacao()
+        })
     }
 
-    // Mouse
-    impWrapper.addEventListener('mousedown', startImpDrag);
-    impWrapper.addEventListener('mousemove', onImpDrag);
-    impWrapper.addEventListener('mouseup', stopImpDrag);
-    impWrapper.addEventListener('mouseleave', stopImpDrag);
+    renderImplantacao()
+})
 
-    // Touch
-    impWrapper.addEventListener('touchstart', startImpDrag);
-    impWrapper.addEventListener('touchmove', onImpDrag, { passive: false });
-    impWrapper.addEventListener('touchend', stopImpDrag);
-
-    // primeira imagem
-    renderImplantacao();
-});
