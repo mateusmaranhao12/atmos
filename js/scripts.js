@@ -450,6 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //Implantação
 document.addEventListener('DOMContentLoaded', () => {
     const implantacaoSlides = [
+        { src: './imgs/IMPLANTACAO/PUC_APTOS.png' },
         { src: './imgs/IMPLANTACAO/23PAV_COBERTURA.png' },
         { src: './imgs/IMPLANTACAO/GARAGEM_2PAV.png' },
         { src: './imgs/IMPLANTACAO/GARAGEM_3PAV.png' },

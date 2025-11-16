@@ -1183,14 +1183,13 @@ body {
     letter-spacing: 0.18em;
     color: #7a96aa;
     display: block;
-    margin-bottom: 8px;
 }
 
 /* título */
 .plantas-title {
     font-size: 40px;
     line-height: 1.2;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
     color: #0b395c;
     font-weight: 300;
 }
@@ -1204,25 +1203,50 @@ body {
     font-size: 15px;
     line-height: 1.8;
     color: #4c5c6a;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* infos com ícone */
-.plantas-info-icon {
-    max-width: 46px;
-    margin-bottom: 8px;
+.plantas-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 28px;
+    margin-top: 40px;
 }
 
+.plantas-infos .col-4 {
+    flex: 1;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 30px;
+    margin-right: 70px;
+}
+
+@media (max-width: 767px) {
+    .plantas-infos .col-4 {
+        margin-right: 0px;
+    }
+}
+
+.plantas-info-icon {
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* TEXTO DEBAIXO DO ÍCONE */
 .plantas-info-text {
     font-size: 14px;
+    font-weight: 600;
+    color: #1d1d1b;
     margin: 0;
-    color: #333;
 }
 
 /* CARD DA PLANTA */
 .plantas-card {
     border-radius: 8px;
-    border: 1px solid #d9e3ec;
     padding: 22px 26px 18px;
     background: #ffffff;
 }
@@ -1230,18 +1254,25 @@ body {
 /* tabs */
 .plantas-tabs {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 6px;
     margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .plantas-tabs {
+        margin-left: 0px;
+        justify-content: center;
+    }
 }
 
 .plantas-tab {
     border: 1px solid #0b395c;
     background: transparent;
-    padding: 6px 24px;
-    border-radius: 3px;
-    font-size: 13px;
-    text-transform: uppercase;
+    padding: 6px 34px;
+    width: 160px;
+    font-size: 18px;
+    font-weight: bold;
     letter-spacing: 0.08em;
     color: #0b395c;
     cursor: pointer;
@@ -1291,16 +1322,26 @@ body {
 /* rodapé do card */
 .plantas-card-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 14px;
     font-size: 13px;
     color: #0b395c;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+@media (max-width: 767px) {
+    .plantas-card-footer {
+        margin-left: 0px;
+        font-size: 100%;
+    }
 }
 
 .plantas-legenda {
     text-transform: uppercase;
     letter-spacing: 0.16em;
+    padding-right: 20px;
 }
 
 /* botão ampliar */
@@ -1327,9 +1368,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-left: 25px;
     max-width: 100%;
     padding: 10px 0 20px;
+}
+
+@media(max-width: 767px) {
+    .plantas-pagination {
+        justify-content: center;
+        margin-left: 0;
+    }
 }
 
 .plantas-page {
@@ -2084,7 +2133,7 @@ body {
     }
 
     .residencial-bear {
-        display: none;
+        display: block;
     }
 
     .residencial-card-image-wrapper {
