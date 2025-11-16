@@ -1181,7 +1181,7 @@ body {
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 0.18em;
-    color: #7a96aa;
+    color: #575756;
     display: block;
 }
 
@@ -1414,11 +1414,10 @@ body {
 /* tag “IMPLANTAÇÃO” */
 .implantacao-tag {
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 0.18em;
-    color: #7b96a8;
+    color: #575756;
     display: block;
-    margin-bottom: 8px;
 }
 
 /* título */
@@ -1436,7 +1435,8 @@ body {
 
 /* texto */
 .implantacao-text {
-    font-size: 15px;
+    margin-top: 40px;
+    font-size: 18px;
     line-height: 1.8;
     color: #4c5c6a;
     max-width: 380px;
@@ -1496,7 +1496,7 @@ body {
 
 /* posição das setas */
 .arrow-left {
-    left: -40px;
+    left: -60px;
     z-index: 2;
 }
 
@@ -1517,12 +1517,12 @@ body {
 }
 
 .implantacao-footer-row .col-lg-6 {
-    margin-left: 60px;
+    margin-left: 0;
 }
 
 /* título "IMPLANTAÇÃO | Puc e apartamentos" */
 .implantacao-footer-left {
-    font-size: 13px;
+    font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.16em;
     color: #0b395c;
@@ -1532,16 +1532,20 @@ body {
 .implantacao-footer-sub {
     font-weight: 400;
     text-transform: none;
-    letter-spacing: normal;
-    font-size: 13px;
+    letter-spacing: 0.18em;
+    font-size: 18px;
     color: #4c5c6a;
     margin-left: 4px;
 }
 
+.implantacao-footer-title {
+    font-weight: bold;
+}
+
 /* linha bolinhas + botão */
 .implantacao-footer-bottom {
+    margin-top: 25px;
     max-width: 360px;
-    /* pra não ir muito pro meio da tela */
 }
 
 /* bolinhas */
@@ -1551,8 +1555,8 @@ body {
 }
 
 .implantacao-dots .dot {
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     border: 1px solid #0b395c;
     cursor: pointer;
@@ -1568,14 +1572,22 @@ body {
     border: 1px solid #0b395c;
     background: transparent;
     padding: 5px 20px;
-    font-size: 13px;
+    font-size: 16px;
     color: #0b395c;
     display: inline-flex;
     align-items: center;
+    margin-left: 350px;
     gap: 6px;
     cursor: pointer;
     white-space: nowrap;
     transition: 0.25s ease;
+}
+
+@media (max-width: 767px) {
+    .implantacao-ampliar-btn {
+        margin-left: 0;
+        margin-top: 0;
+    }
 }
 
 /* estado quando está ampliado */
@@ -1901,40 +1913,123 @@ body {
     margin-top: 100px;
 }
 
-@media (max-width: 767px) {
-    .atmos-footer-icon {
-        margin-top: 0px;
-    }
+@media (min-width: 768px) and (max-width: 1366px) {
 
-    .atmos-footer-icons {
-        flex-direction: column;
-        align-items: center;
+    /* coluna esquerda e direita centralizadas */
+    .atmos-footer-left,
+    .atmos-footer-right {
         text-align: center;
     }
 
-    .atmos-footer-icons .col-md-4,
-    .atmos-footer-icons .col-md-8 {
-        display: flex;
+    /* logos */
+    .atmos-footer-logos,
+    .atmos-footer-logos .row {
         justify-content: center;
     }
 
-    /* ícones sociais centralizados */
+    .atmos-logo-main,
+    .atmos-logo-partners {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* bloco dos ícones + telefone */
+    .atmos-footer-icons {
+        margin-top: 60px;
+        justify-content: center;
+        text-align: center;
+    }
+
     .atmos-footer-social {
         justify-content: center;
-        margin-top: 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* telefone + @ centralizados em coluna */
     .atmos-footer-contact {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         margin-top: 20px;
     }
 
     .atmos-footer-phone,
     .atmos-footer-handle {
         justify-content: center;
+    }
+
+    /* texto legal */
+    .atmos-footer-disclaimer {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    /* botão do formulário */
+    .atmos-footer-right .text-end {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .atmos-footer-left,
+    .atmos-footer-right {
+        text-align: center;
+    }
+
+    /* centralizar logos */
+    .atmos-footer-logos {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .atmos-logo-main,
+    .atmos-logo-partners {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    /* bloco dos ícones */
+    .atmos-footer-icons {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .atmos-footer-social {
+        justify-content: center;
+        margin: 0 auto 20px auto;
+    }
+
+    /* telefone e @ */
+    .atmos-footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .atmos-footer-phone,
+    .atmos-footer-handle {
+        justify-content: center;
+    }
+
+    /* texto legal */
+    .atmos-footer-disclaimer {
+        text-align: center;
+        margin: 30px auto 0 auto;
+    }
+
+    /* botão do formulário */
+    .atmos-footer-right .text-end {
+        text-align: center !important;
     }
 }
 
